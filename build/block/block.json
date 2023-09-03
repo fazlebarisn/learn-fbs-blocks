@@ -1,15 +1,23 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "create-block/fbs-block",
+  "name": "fbs-block/first-block",
   "version": "0.1.0",
-  "title": "Fbs Block",
+  "title": "Fbs Test Block",
   "category": "fbs-blocks",
   "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "description": "only for testing",
   "example": {},
   "supports": {
     "html": false
+  },
+  "attributes": {
+    "message": {
+      "type": "string",
+      "source": "text",
+      "selector": "div",
+      "default": ""
+    }
   },
   "textdomain": "fbs-block",
   "editorScript": "file:./index.js",

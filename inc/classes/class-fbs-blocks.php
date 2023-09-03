@@ -22,28 +22,32 @@ class FBS_BLOCKS {
 
 	public function setup_hooks(){
 		add_action( 'init', [$this, 'fbs_blocks'] );
-		add_filter( 'block_categories_all', [$this, 'register_block_category'] );
+		add_filter( 'block_categories_all', [$this, 'fbs_block_category'] );
 	}
 
+	/**
+	 * To register block just need to add block name here
+	 * block name should be same as block folder name
+	 * @return array $block_names
+	 * @author Fazle Bari
+	 */
 	public function register_block(){
-		$names = [
+		$block_names = [
 			'block',
 			'block2'
 		];
-
-		return $names;
+		
+		return $block_names;
 	}
 
-	public function fbs_blocks(){
-
-		if( is_array( $this->register_block() ) && ! empty( $this->register_block() ) ){
-			foreach( $this->register_block() as $block_name ){
-				register_block_type( FBS_BLOCKS_DIR_PATH . "/build/$block_name" );
-			}
-		}
-	}
-
-	public function fbs_categories(){
+	/**
+	 * To register block a categoy just need to add the expand the array
+	 * add title and slug
+	 * slug should be unicq 
+	 * @return array $category_names
+	 * @author Fazle Bari
+	 */
+	public function register_categories(){
 		$category_names = [
 			[
 				'title'	=> esc_html__( 'Fbs Test', 'fbs-block' ),
@@ -58,17 +62,34 @@ class FBS_BLOCKS {
 		return $category_names;
 	}
 
-	public function register_block_category( $categories ){
+	/**
+	 * loop though the $block_names array and register block
+	 * @return void
+	 * @author Fazle Bari
+	 */
+	public function fbs_blocks(){
+
+		if( is_array( $this->register_block() ) && ! empty( $this->register_block() ) ){
+			foreach( $this->register_block() as $block_name ){
+				register_block_type( FBS_BLOCKS_DIR_PATH . "/build/$block_name" );
+			}
+		}
+	}
+
+	/**
+	 * loop though the $category_names array and register new  block category
+	 * @return void
+	 * @author Fazle Bari
+	 */
+	public function fbs_block_category( $categories ){
 
 		$category_slugs = wp_list_pluck( $categories, 'slug' );
 
-		if( is_array( $this->fbs_categories() ) && ! empty( $this->fbs_categories() ) ){
-			foreach ( $this->fbs_categories() as $category ){
+		if( is_array( $this->register_categories() ) && ! empty( $this->register_categories() ) ){
+			foreach ( $this->register_categories() as $category ){
 				if ( ! in_array( $category['slug'], $category_slugs, true ) ) {
-
 					// Add the category to the array.
 					$categories[] = $category;
-		
 				}
 			}
 		}

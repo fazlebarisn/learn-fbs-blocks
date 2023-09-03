@@ -10,20 +10,35 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       fbs-block
  *
- * @package           create-block
+ * @package           fbs-blocks
  */
 
-/**
- * Registers the block using the metadata loaded from the `block.json` file.
- * Behind the scenes, it registers also all assets so they can be enqueued
- * through the block editor in the corresponding context.
- *
- * @see https://developer.wordpress.org/reference/functions/register_block_type/
- */
-function create_block_fbs_block_block_init() {
-	register_block_type( __DIR__ . '/build' );
+ if (!defined('ABSPATH')) {
+	die('-1');
 }
-add_action( 'init', 'create_block_fbs_block_block_init' );
+
+/**
+ * Only for developer
+ * @author Fazle Bari <fazlebarisn@gmail.com>
+ */
+if( ! function_exists('dd') ){
+	function dd( ...$vals){
+		if( ! empty($vals) && is_array($vals) ){
+			foreach($vals as $val ){
+				echo "<pre>";
+				var_dump($val);
+				echo "</pre>";
+			}
+		}
+	}
+}
+
+
+if ( ! defined( 'FBS_BLOCKS_DIR_PATH' ) ) {
+	define( 'FBS_BLOCKS_DIR_PATH', __DIR__ );
+}
+
+require_once FBS_BLOCKS_DIR_PATH . '/inc/helpers/autoloader.php';
 
 function fbs_blocks_plugin_instance() {
 	\FBS_BLOCKS\Inc\FBS_BLOCKS::get_instance();

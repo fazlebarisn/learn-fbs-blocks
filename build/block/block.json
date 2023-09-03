@@ -4,7 +4,7 @@
   "name": "create-block/fbs-block",
   "version": "0.1.0",
   "title": "Fbs Block",
-  "category": "widgets",
+  "category": "fbs-blocks",
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},

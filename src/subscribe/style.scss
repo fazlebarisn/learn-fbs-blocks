@@ -1,0 +1,18 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .wp-block-fbs-block-subscribe {
+    background: #a5bda7;
+    padding: 10px;
+    color: #c53a72;
+}
+
+.wp-block-fbs-block-subscribe h2.subscribe-heading {
+    color: #ad6868;
+    font-weight: 800;
+    font-size: 45px;
+}

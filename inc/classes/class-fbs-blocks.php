@@ -34,7 +34,7 @@ class FBS_BLOCKS {
 	public function register_block(){
 		$block_names = [
 			'block',
-			'block2'
+			'subscribe'
 		];
 		
 		return $block_names;

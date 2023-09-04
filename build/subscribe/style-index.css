@@ -1,0 +1,22 @@
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/subscribe/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-fbs-block-subscribe {
+  background: #a5bda7;
+  padding: 10px;
+  color: #c53a72;
+}
+
+.wp-block-fbs-block-subscribe h2.subscribe-heading {
+  color: #ad6868;
+  font-weight: 800;
+  font-size: 45px;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

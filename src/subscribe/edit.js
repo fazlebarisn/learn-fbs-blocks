@@ -13,11 +13,25 @@ export default function Edit( { attributes, setAttributes } ) {
             <InspectorControls key="setting">
                 <Panel>
                     <PanelBody title='Subscribe Settings' initialOpen={true}>
+
                         <TextControl className="blocks-base-control__input"
                             label={'Title'}
                             value={attributes.title}
                             onChange={ (val) => setAttributes( {title: val} ) }
                         />
+
+                        <TextControl className="blocks-base-control__input"
+                            label={'description'}
+                            value={attributes.description}
+                            onChange={ (val) => setAttributes( {description: val} ) }
+                        />
+
+                        <TextControl className="blocks-base-control__input"
+                            label={'button'}
+                            value={attributes.button}
+                            onChange={ (val) => setAttributes( {button: val} ) }
+                        />
+
                     </PanelBody>
                 </Panel>
             </InspectorControls>

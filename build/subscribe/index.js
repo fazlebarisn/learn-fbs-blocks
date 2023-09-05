@@ -44,6 +44,20 @@ function Edit({
     onChange: val => setAttributes({
       title: val
     })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    className: "blocks-base-control__input",
+    label: 'description',
+    value: attributes.description,
+    onChange: val => setAttributes({
+      description: val
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    className: "blocks-base-control__input",
+    label: 'button',
+    value: attributes.button,
+    onChange: val => setAttributes({
+      button: val
+    })
   })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "subscribe"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {

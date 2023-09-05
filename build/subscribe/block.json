@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "title": "Subscribe",
   "category": "fbs-blocks",
-  "icon": "smiley",
-  "description": "Add a subscribe button",
+  "icon": "email",
+  "description": "Add a subscribe form",
   "example": {},
   "supports": {
     "html": false
@@ -24,10 +24,10 @@
       "selector": "p",
       "default": "Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"
     },
-    "placeholder": {
+    "tag": {
       "type": "string",
       "source": "text",
-      "default": "Enter your email address"
+      "default": "h2"
     },
     "button": {
       "type": "string",

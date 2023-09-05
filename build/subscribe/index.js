@@ -30,31 +30,65 @@ function Edit({
   attributes,
   setAttributes
 }) {
+  const {
+    title,
+    description,
+    button,
+    tag
+  } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
     key: "setting"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Panel, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Subscribe Settings",
-    initialOpen: true
+    title: "Subscribe Title Settings",
+    initialOpen: false
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
     className: "blocks-base-control__input",
-    label: 'Title',
-    value: attributes.title,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('change title text', 'fbs-block'),
+    value: title,
     onChange: val => setAttributes({
       title: val
     })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Change tag', 'fbs-block'),
+    value: tag,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('H1', 'fbs-block'),
+      value: 'h1'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('H2', 'fbs-block'),
+      value: 'h2'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('H3', 'fbs-block'),
+      value: 'h3'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('H4', 'fbs-block'),
+      value: 'h4'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('H5', 'fbs-block'),
+      value: 'h5'
+    }],
+    onChange: val => setAttributes({
+      tag: val
+    })
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: "Subscribe Description Settings",
+    initialOpen: false
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
     className: "blocks-base-control__input",
-    label: 'description',
-    value: attributes.description,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('change description text', 'fbs-block'),
+    value: description,
     onChange: val => setAttributes({
       description: val
     })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: "Subscribe Button Settings",
+    initialOpen: false
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
     className: "blocks-base-control__input",
-    label: 'button',
-    value: attributes.button,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('change button text', 'fbs-block'),
+    value: button,
     onChange: val => setAttributes({
       button: val
     })
@@ -62,9 +96,9 @@ function Edit({
     className: "subscribe"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "subscribe__title"
-  }, attributes.title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }, title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "subscribe__copy"
-  }, attributes.description), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, description), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "form"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "email",
@@ -275,7 +309,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"smiley","description":"Add a subscribe button","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","source":"text","selector":"h2","default":"Let\'s keep in touch"},"description":{"type":"string","source":"text","selector":"p","default":"Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"},"placeholder":{"type":"string","source":"text","default":"Enter your email address"},"button":{"type":"string","source":"text","default":"Send"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"email","description":"Add a subscribe form","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","source":"text","selector":"h2","default":"Let\'s keep in touch"},"description":{"type":"string","source":"text","selector":"p","default":"Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"},"tag":{"type":"string","source":"text","default":"h2"},"button":{"type":"string","source":"text","default":"Send"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

@@ -12,6 +12,35 @@ export default function Edit( { attributes, setAttributes } ) {
         <div { ...useBlockProps() }>
             <InspectorControls key="setting">
                 <Panel>
+                    <PanelBody title='Subscribe Settings' initialOpen={true}>
+                        <TextControl className="blocks-base-control__input"
+                            label={'Title'}
+                            value={attributes.title}
+                            onChange={ (val) => setAttributes( {title: val} ) }
+                        />
+                    </PanelBody>
+                </Panel>
+            </InspectorControls>
+            <div className='subscribe'>
+                <h2 className="subscribe__title">{attributes.title}</h2>
+                <p className="subscribe__copy">{attributes.description}</p>
+                <div className="form">
+                    <input type="email" className="form__email" placeholder="Enter Your Email Id" />
+                    <button className="form__button">{attributes.button}</button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+
+/** 
+
+export default function Edit( { attributes, setAttributes } ) {
+    return (
+        <div { ...useBlockProps() }>
+            <InspectorControls key="setting">
+                <Panel>
                     <PanelBody title='Subscribe Attribute' initialOpen={true}>
                         <TextControl className="blocks-base-control__input"
                         label={"Heading"}
@@ -27,3 +56,4 @@ export default function Edit( { attributes, setAttributes } ) {
     );
 }
 
+*/

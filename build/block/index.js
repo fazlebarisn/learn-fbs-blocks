@@ -56,7 +56,7 @@ function Edit({
   }, attributes.message && !isSelected ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, attributes.message) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Placeholder, {
     label: "Fbs Block",
     instructions: "Add your message"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InputControl, {
     value: attributes.message,
     onChange: val => setAttributes({
       message: val
@@ -67,15 +67,25 @@ function Edit({
 /** 
 
 export default function Edit( { attributes, setAttributes } ) {
-    const blockProps = useBlockProps();
     return (
-        <TextControl
-            { ...blockProps }
-            value={ attributes.message }
-            onChange={ ( val ) => setAttributes( { message: val } ) }
-        />
+        <div { ...useBlockProps() }>
+            <InspectorControls key="setting">
+                <Panel>
+                    <PanelBody title='Subscribe Attribute' initialOpen={true}>
+                        <TextControl className="blocks-base-control__input"
+                        label={"Heading"}
+                        value={attributes.heading}
+                        onChange={ (val) => setAttributes({heading: val}) }
+                        />
+                    </PanelBody>
+                </Panel>
+            </InspectorControls>
+            <h2 className="{subscribe-heading}">{attributes.heading}</h2>
+            <p>Visit our subscribe page</p>
+        </div>
     );
 }
+
 */
 
 /***/ }),

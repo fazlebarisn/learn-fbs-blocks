@@ -35,19 +35,55 @@ function Edit({
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
     key: "setting"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Panel, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Subscribe Attribute",
+    title: "Subscribe Settings",
     initialOpen: true
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
     className: "blocks-base-control__input",
-    label: "Heading",
-    value: attributes.heading,
+    label: 'Title',
+    value: attributes.title,
     onChange: val => setAttributes({
-      heading: val
+      title: val
     })
-  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "{subscribe-heading}"
-  }, attributes.heading), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Visit our subscribe page"));
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "subscribe"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "subscribe__title"
+  }, attributes.title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "subscribe__copy"
+  }, attributes.description), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "form"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "email",
+    className: "form__email",
+    placeholder: "Enter Your Email Id"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "form__button"
+  }, attributes.button))));
 }
+
+/** 
+
+export default function Edit( { attributes, setAttributes } ) {
+    return (
+        <div { ...useBlockProps() }>
+            <InspectorControls key="setting">
+                <Panel>
+                    <PanelBody title='Subscribe Attribute' initialOpen={true}>
+                        <TextControl className="blocks-base-control__input"
+                        label={"Heading"}
+                        value={attributes.heading}
+                        onChange={ (val) => setAttributes({heading: val}) }
+                        />
+                    </PanelBody>
+                </Panel>
+            </InspectorControls>
+            <h2 className="{subscribe-heading}">{attributes.heading}</h2>
+            <p>Visit our subscribe page</p>
+        </div>
+    );
+}
+
+*/
 
 /***/ }),
 
@@ -126,9 +162,21 @@ function save({
 }) {
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "subscribe"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "subscribe-heading"
-  }, attributes.heading), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Visit our subscribe page"));
+    className: "subscribe__title"
+  }, attributes.title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "subscribe__copy"
+  }, attributes.description), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "form"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "email",
+    className: "form__email",
+    placeholder: "Enter Your Email Id"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "form__button"
+  }, attributes.button))));
 }
 
 /***/ }),
@@ -213,7 +261,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"smiley","description":"Add a subscribe button","example":{},"supports":{"html":false},"attributes":{"heading":{"type":"string","source":"text","selector":"div","default":"Subscribe Now"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"smiley","description":"Add a subscribe button","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","source":"text","selector":"h2","default":"Let\'s keep in touch"},"description":{"type":"string","source":"text","selector":"p","default":"Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"},"placeholder":{"type":"string","source":"text","default":"Enter your email address"},"button":{"type":"string","source":"text","default":"Send"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

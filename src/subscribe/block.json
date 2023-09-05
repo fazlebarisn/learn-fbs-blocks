@@ -12,11 +12,27 @@
 		"html": false
 	},
 	"attributes": {
-		"heading": {
+		"title": {
 			"type": "string",
 			"source": "text",
-			"selector": "div",
-			"default": "Subscribe Now"
+			"selector": "h2",
+			"default": "Let's keep in touch"
+		},
+		"description": {
+			"type": "string",
+			"source": "text",
+			"selector": "p",
+			"default": "Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"
+		},
+		"placeholder": {
+			"type": "string",
+			"source": "text",
+			"default": "Enter your email address"
+		},
+		"button": {
+			"type": "string",
+			"source": "text",
+			"default": "Send"
 		}
 	},
 	"textdomain": "fbs-block",

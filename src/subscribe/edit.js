@@ -9,7 +9,7 @@ import './editor.scss';
 
 export default function Edit( { attributes, setAttributes } ) {
     const { title, description, button, headingColor, descriptionColor, buttonColor,formBackground,buttonBackground, formPadding } = attributes;
-
+console.log(formPadding);
     const colors = [
         { name: 'red', color: '#f00' },
         { name: 'white', color: '#fff' },
@@ -141,7 +141,7 @@ export default function Edit( { attributes, setAttributes } ) {
                     ]}
                 />
             </InspectorControls>
-            <div className='subscribe' style={{background:formBackground}} >
+            <div className='subscribe' style={{background:formBackground, padding:`${formPadding.top} ${formPadding.right} ${formPadding.bottom} ${formPadding.left}`}} >
                 <h2 className="subscribe__title" style={{color:headingColor}} >{title}</h2>
                 <p className="subscribe__copy" style={{color:descriptionColor}}>{description}</p>
                 <div className="form">

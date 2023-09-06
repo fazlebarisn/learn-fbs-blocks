@@ -41,6 +41,7 @@ function Edit({
     buttonBackground,
     formPadding
   } = attributes;
+  console.log(formPadding);
   const colors = [{
     name: 'red',
     color: '#f00'
@@ -174,7 +175,8 @@ function Edit({
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "subscribe",
     style: {
-      background: formBackground
+      background: formBackground,
+      padding: `${formPadding.top} ${formPadding.right} ${formPadding.bottom} ${formPadding.left}`
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "subscribe__title",
@@ -284,14 +286,16 @@ function save({
     descriptionColor,
     buttonColor,
     formBackground,
-    buttonBackground
+    buttonBackground,
+    formPadding
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "subscribe",
     style: {
-      background: formBackground
+      background: formBackground,
+      padding: `${formPadding.top} ${formPadding.right} ${formPadding.bottom} ${formPadding.left}`
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "subscribe__title",

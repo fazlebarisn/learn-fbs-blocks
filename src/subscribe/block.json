@@ -29,9 +29,25 @@
 			"source": "text",
 			"default": "Send"
 		},
-		"HeadingColor": {
+		"headingColor": {
 			"type":"string",
 			"default":"#333333"
+		},
+		"descriptionColor": {
+			"type":"string",
+			"default":"#6d6d6d"
+		},
+		"buttonColor": {
+			"type":"string",
+			"default":"#ffffff"
+		},
+		"formBackground": {
+			"type":"string",
+			"default":"#ffffff"
+		},
+		"buttonBackground": {
+			"type":"string",
+			"default":"#3D9FFF"
 		}
 	},
 	"textdomain": "fbs-block",

@@ -34,7 +34,11 @@ function Edit({
     title,
     description,
     button,
-    HeadingColor
+    headingColor,
+    descriptionColor,
+    buttonColor,
+    formBackground,
+    buttonBackground
   } = attributes;
   const colors = [{
     name: 'red',
@@ -65,9 +69,9 @@ function Edit({
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Chnage text Color"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
     colors: colors,
-    value: HeadingColor,
+    value: headingColor,
     onChange: color => setAttributes({
-      HeadingColor: color
+      headingColor: color
     })
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "Subscribe Description Settings",
@@ -89,15 +93,56 @@ function Edit({
     onChange: val => setAttributes({
       button: val
     })
-  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "subscribe"
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Color Settings', 'fbs-block'),
+    initialOpen: false,
+    colors: colors,
+    colorSettings: [{
+      value: headingColor,
+      onChange: color => setAttributes({
+        headingColor: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading Color', 'fbs-block')
+    }, {
+      value: descriptionColor,
+      onChange: color => setAttributes({
+        descriptionColor: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Description Color', 'fbs-block')
+    }, {
+      value: buttonColor,
+      onChange: color => setAttributes({
+        buttonColor: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Color', 'fbs-block')
+    }, {
+      value: formBackground,
+      onChange: color => setAttributes({
+        formBackground: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Form Background Color', 'fbs-block')
+    }, {
+      value: buttonBackground,
+      onChange: color => setAttributes({
+        buttonBackground: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Background Color', 'fbs-block')
+    }]
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "subscribe",
+    style: {
+      background: formBackground
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "subscribe__title",
     style: {
-      color: HeadingColor
+      color: headingColor
     }
   }, title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "subscribe__copy"
+    className: "subscribe__copy",
+    style: {
+      color: descriptionColor
+    }
   }, description), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "form"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
@@ -105,7 +150,11 @@ function Edit({
     className: "form__email",
     placeholder: "Enter Your Email Id"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "form__button"
+    className: "form__button",
+    style: {
+      color: buttonColor,
+      background: buttonBackground
+    }
   }, button))));
 }
 
@@ -188,19 +237,29 @@ function save({
     title,
     description,
     button,
-    HeadingColor
+    headingColor,
+    descriptionColor,
+    buttonColor,
+    formBackground,
+    buttonBackground
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "subscribe"
+    className: "subscribe",
+    style: {
+      background: formBackground
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "subscribe__title",
     style: {
-      color: HeadingColor
+      color: headingColor
     }
   }, title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "subscribe__copy"
+    className: "subscribe__copy",
+    style: {
+      color: descriptionColor
+    }
   }, description), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "form"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
@@ -208,7 +267,11 @@ function save({
     className: "form__email",
     placeholder: "Enter Your Email Id"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "form__button"
+    className: "form__button",
+    style: {
+      color: buttonColor,
+      background: buttonBackground
+    }
   }, button))));
 }
 
@@ -294,7 +357,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"email","description":"Add a subscribe form","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","source":"text","selector":"h2","default":"Let\'s keep in touch"},"description":{"type":"string","source":"text","selector":"p","default":"Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"},"button":{"type":"string","source":"text","default":"Send"},"HeadingColor":{"type":"string","default":"#333333"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"email","description":"Add a subscribe form","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","source":"text","selector":"h2","default":"Let\'s keep in touch"},"description":{"type":"string","source":"text","selector":"p","default":"Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"},"button":{"type":"string","source":"text","default":"Send"},"headingColor":{"type":"string","default":"#333333"},"descriptionColor":{"type":"string","default":"#6d6d6d"},"buttonColor":{"type":"string","default":"#ffffff"},"formBackground":{"type":"string","default":"#ffffff"},"buttonBackground":{"type":"string","default":"#3D9FFF"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

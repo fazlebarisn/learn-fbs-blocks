@@ -1,7 +1,7 @@
 
 import { __ } from '@wordpress/i18n';
 
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { useBlockProps, InspectorControls, RichText  } from '@wordpress/block-editor';
 import { Panel, PanelBody, TextControl, SelectControl } from '@wordpress/components';
 
 import './editor.scss';
@@ -53,11 +53,17 @@ export default function Edit( { attributes, setAttributes } ) {
                 </Panel>
             </InspectorControls>
             <div className='subscribe'>
-                <h2 className="subscribe__title">{title}</h2>
+                <RichText
+                    tagName={tag}
+                    value={title}
+                    allowedFormats={ [ 'core/bold', 'core/italic' ] }
+                    className='subscribe__title'
+                    onChange={ (val) => setAttributes( {title: val} ) }
+                />
                 <p className="subscribe__copy">{description}</p>
                 <div className="form">
                     <input type="email" className="form__email" placeholder="Enter Your Email Id" />
-                    <button className="form__button">{attributes.button}</button>
+                    <button className="form__button">{button}</button>
                 </div>
             </div>
         </div>

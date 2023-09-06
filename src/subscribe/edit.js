@@ -2,13 +2,21 @@
 import { __ } from '@wordpress/i18n';
 
 import { useBlockProps, InspectorControls, RichText  } from '@wordpress/block-editor';
-import { Panel, PanelBody, TextControl, SelectControl } from '@wordpress/components';
+import { Panel, PanelBody, TextControl, ColorPalette } from '@wordpress/components';
 
 import './editor.scss';
 
 
 export default function Edit( { attributes, setAttributes } ) {
-    const { title, description, button, tag } = attributes;
+    const { title, description, button, HeadingColor } = attributes;
+
+    const colors = [
+        { name: 'red', color: '#f00' },
+        { name: 'white', color: '#fff' },
+        { name: 'blue', color: '#00f' },
+        { name: 'dark', color: '#333333' },
+    ];
+
     return (
         <div { ...useBlockProps() }>
             <InspectorControls key="setting">
@@ -20,17 +28,11 @@ export default function Edit( { attributes, setAttributes } ) {
                             value={title}
                             onChange={ (val) => setAttributes( {title: val} ) }
                         />
-                        <SelectControl
-                            label={__('Change tag', 'fbs-block')}
-                            value={tag}
-                            options={[
-                                { label: __('H1', 'fbs-block'), value: 'h1' },
-                                { label: __('H2', 'fbs-block'), value: 'h2' },
-                                { label: __('H3', 'fbs-block'), value: 'h3' },
-                                { label: __('H4', 'fbs-block'), value: 'h4' },
-                                { label: __('H5', 'fbs-block'), value: 'h5' }
-                            ]}
-                            onChange={ (val) => setAttributes( {tag: val} ) }
+                        <p>Chnage text Color</p>
+                        <ColorPalette
+                            colors={colors}
+                            value={HeadingColor}
+                            onChange={ (color) => setAttributes( { HeadingColor: color } ) }
                         />
                     </PanelBody>
 
@@ -53,13 +55,7 @@ export default function Edit( { attributes, setAttributes } ) {
                 </Panel>
             </InspectorControls>
             <div className='subscribe'>
-                <RichText
-                    tagName={tag}
-                    value={title}
-                    allowedFormats={ [ 'core/bold', 'core/italic' ] }
-                    className='subscribe__title'
-                    onChange={ (val) => setAttributes( {title: val} ) }
-                />
+                <h2 className="subscribe__title" style={{color:HeadingColor}} >{title}</h2>
                 <p className="subscribe__copy">{description}</p>
                 <div className="form">
                     <input type="email" className="form__email" placeholder="Enter Your Email Id" />
@@ -70,27 +66,3 @@ export default function Edit( { attributes, setAttributes } ) {
     );
 }
 
-
-/** 
-
-export default function Edit( { attributes, setAttributes } ) {
-    return (
-        <div { ...useBlockProps() }>
-            <InspectorControls key="setting">
-                <Panel>
-                    <PanelBody title='Subscribe Attribute' initialOpen={true}>
-                        <TextControl className="blocks-base-control__input"
-                        label={"Heading"}
-                        value={attributes.heading}
-                        onChange={ (val) => setAttributes({heading: val}) }
-                        />
-                    </PanelBody>
-                </Panel>
-            </InspectorControls>
-            <h2 className="{subscribe-heading}">{attributes.heading}</h2>
-            <p>Visit our subscribe page</p>
-        </div>
-    );
-}
-
-*/

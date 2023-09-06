@@ -24,15 +24,14 @@
 			"selector": "p",
 			"default": "Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"
 		},
-		"tag": {
-			"type": "string",
-			"source": "text",
-			"default": "h2"
-		},
 		"button": {
 			"type": "string",
 			"source": "text",
 			"default": "Send"
+		},
+		"HeadingColor": {
+			"type":"string",
+			"default":"#333333"
 		}
 	},
 	"textdomain": "fbs-block",

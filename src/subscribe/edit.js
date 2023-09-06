@@ -2,13 +2,13 @@
 import { __ } from '@wordpress/i18n';
 
 import { useBlockProps, InspectorControls, PanelColorSettings  } from '@wordpress/block-editor';
-import { Panel, PanelBody, TextControl, ColorPalette, GradientPicker } from '@wordpress/components';
+import { Panel, PanelBody, TextControl, ColorPalette, GradientPicker, __experimentalBoxControl as BoxControl } from '@wordpress/components';
 
 import './editor.scss';
 
 
 export default function Edit( { attributes, setAttributes } ) {
-    const { title, description, button, headingColor, descriptionColor, buttonColor,formBackground,buttonBackground } = attributes;
+    const { title, description, button, headingColor, descriptionColor, buttonColor,formBackground,buttonBackground, formPadding } = attributes;
 
     const colors = [
         { name: 'red', color: '#f00' },
@@ -95,6 +95,14 @@ export default function Edit( { attributes, setAttributes } ) {
                         <GradientPicker
                             onChange={ (color) => setAttributes( {formBackground: color} ) }
                             gradients={gradientColors}
+                        />
+                    </PanelBody>
+
+                    <PanelBody title='Typography' initialOpen={false}>
+                        <BoxControl
+                            label={__('Set Form Padding','fbs-block') }
+                            values={formPadding}
+                            onChange={ (padding) => setAttributes( {formPadding: padding} ) }
                         />
                     </PanelBody>
 

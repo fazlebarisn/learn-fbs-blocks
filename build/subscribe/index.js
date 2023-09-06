@@ -38,7 +38,8 @@ function Edit({
     descriptionColor,
     buttonColor,
     formBackground,
-    buttonBackground
+    buttonBackground,
+    formPadding
   } = attributes;
   const colors = [{
     name: 'red',
@@ -126,6 +127,15 @@ function Edit({
       formBackground: color
     }),
     gradients: gradientColors
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: "Typography",
+    initialOpen: false
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalBoxControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Set Form Padding', 'fbs-block'),
+    values: formPadding,
+    onChange: padding => setAttributes({
+      formPadding: padding
+    })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Color Settings', 'fbs-block'),
     initialOpen: false,
@@ -390,7 +400,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"email","description":"Add a subscribe form","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","source":"text","selector":"h2","default":"Let\'s keep in touch"},"description":{"type":"string","source":"text","selector":"p","default":"Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"},"button":{"type":"string","source":"text","default":"Send"},"headingColor":{"type":"string","default":"#333333"},"descriptionColor":{"type":"string","default":"#6d6d6d"},"buttonColor":{"type":"string","default":"#ffffff"},"formBackground":{"type":"string","default":"#ffffff"},"buttonBackground":{"type":"string","default":"#3D9FFF"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"email","description":"Add a subscribe form","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","source":"text","selector":"h2","default":"Let\'s keep in touch"},"description":{"type":"string","source":"text","selector":"p","default":"Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"},"button":{"type":"string","source":"text","default":"Send"},"headingColor":{"type":"string","default":"#333333"},"descriptionColor":{"type":"string","default":"#6d6d6d"},"buttonColor":{"type":"string","default":"#ffffff"},"formBackground":{"type":"string","default":"#ffffff"},"formPadding":{"type":"object","default":{"top":"80px","bottom":"80px","left":"0","right":"0"}},"buttonBackground":{"type":"string","default":"#3D9FFF"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

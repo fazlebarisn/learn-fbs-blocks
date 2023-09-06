@@ -45,6 +45,15 @@
 			"type":"string",
 			"default":"#ffffff"
 		},
+		"formPadding": {
+			"type":"object",
+			"default":{
+				"top": "80px",
+				"bottom": "80px",
+				"left": "0",
+				"right": "0"
+			}
+		},
 		"buttonBackground": {
 			"type":"string",
 			"default":"#3D9FFF"

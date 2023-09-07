@@ -33,7 +33,7 @@ class FBS_BLOCKS {
 	 */
 	public function register_block(){
 		$block_names = [
-			'block',
+			'testimonial',
 			'subscribe'
 		];
 		

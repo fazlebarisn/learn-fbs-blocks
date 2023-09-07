@@ -55,6 +55,7 @@ function Edit({
     name: 'dark',
     color: '#333333'
   }];
+  const shortcode = '[Product_Table]';
   const gradientColors = [{
     name: 'Vivid cyan blue to vivid purple',
     gradient: 'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)',

@@ -15,7 +15,7 @@ export default function Edit( { attributes, setAttributes } ) {
         { name: 'blue', color: '#00f' },
         { name: 'dark', color: '#333333' },
     ];
-
+    const shortcode = '[Product_Table]';
     const gradientColors = [
         {
             name: 'Vivid cyan blue to vivid purple',
@@ -167,7 +167,6 @@ export default function Edit( { attributes, setAttributes } ) {
                     <button className="form__button" style={{color:buttonColor,background:buttonBackground}} >{button}</button>
                 </div>
             </div>
-
         </div>
     );
 }

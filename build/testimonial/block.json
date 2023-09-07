@@ -3,7 +3,7 @@
   "apiVersion": 3,
   "name": "fbs-block/testimonial",
   "version": "0.1.0",
-  "title": "Testimonial block",
+  "title": "Testimonial",
   "category": "fbs-blocks",
   "icon": "smiley",
   "description": "only for testing",

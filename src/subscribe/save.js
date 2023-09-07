@@ -3,10 +3,17 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 
 export default function save( { attributes } ) {
-    const { title, description, button, headingColor, descriptionColor, buttonColor, formBackground, buttonBackground, formPadding} = attributes;
+    const { title, description, button, headingColor, descriptionColor, buttonColor, formBackground, buttonBackground, formPadding, formRadius} = attributes;
     return(
         <div {...useBlockProps.save()}>
-            <div className='subscribe' style={{background:formBackground, padding:`${formPadding.top} ${formPadding.right} ${formPadding.bottom} ${formPadding.left}`}} >
+            <div className='subscribe' 
+                style={{
+                    background:formBackground, 
+                    padding:`${formPadding.top} ${formPadding.right} ${formPadding.bottom} ${formPadding.left}`,
+                    borderRadius:`${formRadius}px`
+                    }} 
+                >
+
                 <h2 className="subscribe__title" style={{color:headingColor}} >{title}</h2>
                 <p className="subscribe__copy" style={{color:descriptionColor}}>{description}</p>
                 <div className="form">

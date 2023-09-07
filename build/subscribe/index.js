@@ -39,9 +39,9 @@ function Edit({
     buttonColor,
     formBackground,
     buttonBackground,
-    formPadding
+    formPadding,
+    formRadius
   } = attributes;
-  console.log(formPadding);
   const colors = [{
     name: 'red',
     color: '#f00'
@@ -128,6 +128,12 @@ function Edit({
       formBackground: color
     }),
     gradients: gradientColors
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border Radius'),
+    value: formRadius,
+    onChange: radius => setAttributes({
+      formRadius: radius
+    })
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "Typography",
     initialOpen: false
@@ -176,7 +182,8 @@ function Edit({
     className: "subscribe",
     style: {
       background: formBackground,
-      padding: `${formPadding.top} ${formPadding.right} ${formPadding.bottom} ${formPadding.left}`
+      padding: `${formPadding.top} ${formPadding.right} ${formPadding.bottom} ${formPadding.left}`,
+      borderRadius: `${formRadius}px`
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "subscribe__title",
@@ -287,7 +294,8 @@ function save({
     buttonColor,
     formBackground,
     buttonBackground,
-    formPadding
+    formPadding,
+    formRadius
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
@@ -295,7 +303,8 @@ function save({
     className: "subscribe",
     style: {
       background: formBackground,
-      padding: `${formPadding.top} ${formPadding.right} ${formPadding.bottom} ${formPadding.left}`
+      padding: `${formPadding.top} ${formPadding.right} ${formPadding.bottom} ${formPadding.left}`,
+      borderRadius: `${formRadius}px`
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "subscribe__title",
@@ -404,7 +413,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"email","description":"Add a subscribe form","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","source":"text","selector":"h2","default":"Let\'s keep in touch"},"description":{"type":"string","source":"text","selector":"p","default":"Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"},"button":{"type":"string","source":"text","default":"Send"},"headingColor":{"type":"string","default":"#333333"},"descriptionColor":{"type":"string","default":"#6d6d6d"},"buttonColor":{"type":"string","default":"#ffffff"},"formBackground":{"type":"string","default":"#ffffff"},"formPadding":{"type":"object","default":{"top":"80px","bottom":"80px","left":"0","right":"0"}},"buttonBackground":{"type":"string","default":"#3D9FFF"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"email","description":"Add a subscribe form","example":{},"supports":{"html":false,"align":true},"attributes":{"title":{"type":"string","source":"text","selector":"h2","default":"Let\'s keep in touch"},"description":{"type":"string","source":"text","selector":"p","default":"Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"},"button":{"type":"string","source":"text","default":"Send"},"headingColor":{"type":"string","default":"#333333"},"descriptionColor":{"type":"string","default":"#6d6d6d"},"buttonColor":{"type":"string","default":"#ffffff"},"formBackground":{"type":"string","default":"#ffffff"},"formRadius":{"type":"number","default":"10"},"formPadding":{"type":"object","default":{"top":"80px","bottom":"80px","left":"0","right":"0"}},"buttonBackground":{"type":"string","default":"#3D9FFF"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

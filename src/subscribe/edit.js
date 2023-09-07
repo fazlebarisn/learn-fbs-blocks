@@ -1,15 +1,14 @@
 
 import { __ } from '@wordpress/i18n';
 
-import { useBlockProps, InspectorControls, PanelColorSettings  } from '@wordpress/block-editor';
-import { Panel, PanelBody, TextControl, ColorPalette, GradientPicker, __experimentalBoxControl as BoxControl } from '@wordpress/components';
+import { useBlockProps, InspectorControls, PanelColorSettings, AlignmentToolbar, BlockControls  } from '@wordpress/block-editor';
+import { Panel, RangeControl, PanelBody, TextControl, ColorPalette, GradientPicker, __experimentalBoxControl as BoxControl } from '@wordpress/components';
 
 import './editor.scss';
 
-
 export default function Edit( { attributes, setAttributes } ) {
-    const { title, description, button, headingColor, descriptionColor, buttonColor,formBackground,buttonBackground, formPadding } = attributes;
-console.log(formPadding);
+    const { title, description, button, headingColor, descriptionColor, buttonColor,formBackground,buttonBackground, formPadding, formRadius } = attributes;
+
     const colors = [
         { name: 'red', color: '#f00' },
         { name: 'white', color: '#fff' },
@@ -67,6 +66,12 @@ console.log(formPadding);
                             value={title}
                             onChange={ (val) => setAttributes( {title: val} ) }
                         />
+                        {/* <BlockControls>
+                            <AlignmentToolbar
+                                value={headingAlign}
+                                onChange={ (align) => setAttributes( {headingAlign: align} ) }
+                            />
+                        </BlockControls> */}
                         <p>Chnage text Color</p>
                         <ColorPalette
                             colors={colors}
@@ -95,6 +100,11 @@ console.log(formPadding);
                         <GradientPicker
                             onChange={ (color) => setAttributes( {formBackground: color} ) }
                             gradients={gradientColors}
+                        />
+                        <RangeControl
+                            label={__('Border Radius')}
+                            value={formRadius}
+                            onChange={ (radius) => setAttributes( {formRadius: radius} ) }
                         />
                     </PanelBody>
 
@@ -141,7 +151,15 @@ console.log(formPadding);
                     ]}
                 />
             </InspectorControls>
-            <div className='subscribe' style={{background:formBackground, padding:`${formPadding.top} ${formPadding.right} ${formPadding.bottom} ${formPadding.left}`}} >
+
+            <div className='subscribe' 
+                style={{
+                    background:formBackground, 
+                    padding:`${formPadding.top} ${formPadding.right} ${formPadding.bottom} ${formPadding.left}`,
+                    borderRadius:`${formRadius}px`
+                    }} 
+                >
+
                 <h2 className="subscribe__title" style={{color:headingColor}} >{title}</h2>
                 <p className="subscribe__copy" style={{color:descriptionColor}}>{description}</p>
                 <div className="form">
@@ -149,6 +167,7 @@ console.log(formPadding);
                     <button className="form__button" style={{color:buttonColor,background:buttonBackground}} >{button}</button>
                 </div>
             </div>
+
         </div>
     );
 }

@@ -9,7 +9,8 @@
 	"description": "Add a subscribe form",
 	"example": {},
 	"supports": {
-		"html": false
+		"html": false,
+		"align": true
 	},
 	"attributes": {
 		"title": {
@@ -44,6 +45,10 @@
 		"formBackground": {
 			"type":"string",
 			"default":"#ffffff"
+		},
+		"formRadius": {
+			"type":"number",
+			"default":"10"
 		},
 		"formPadding": {
 			"type":"object",

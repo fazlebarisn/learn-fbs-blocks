@@ -122,15 +122,7 @@ function save({
     class: "container"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "gallery-container"
-  }, gallery.map((image, index) => {
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "single-gallery-image",
-      key: index
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: image.url,
-      alt: image.alt
-    }));
-  })));
+  }));
 }
 
 /***/ }),

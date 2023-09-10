@@ -56,12 +56,10 @@ function Edit({
     value: id,
     render: ({
       open
-    }) => {
-      (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarButton, {
-        onClick: open,
-        icon: 'edit'
-      });
-    }
+    }) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarButton, {
+      onClick: open,
+      icon: 'edit'
+    })
   })))), url ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: url,
     alt: alt,

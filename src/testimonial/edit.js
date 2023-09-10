@@ -29,12 +29,12 @@ export default function Edit( { attributes, setAttributes } ) {
                                         })}
                                         allowedTypes={['image']}
                                         value={id}
-                                        render={ ({open}) => {
+                                        render={ ({open}) => (
                                             <ToolbarButton
                                                 onClick={open}
                                                 icon={'edit'}
                                             />
-                                        }}
+                                        )}
                                     />
                                 </MediaUploadCheck>
                             </ToolbarGroup>

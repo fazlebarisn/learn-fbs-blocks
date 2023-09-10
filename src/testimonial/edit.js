@@ -1,7 +1,7 @@
 
 import { __ } from '@wordpress/i18n';
 
-import { useBlockProps, MediaPlaceholder, BlockControls } from '@wordpress/block-editor';
+import { useBlockProps, MediaPlaceholder, BlockControls, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
 
 import './editor.scss';
@@ -18,9 +18,25 @@ export default function Edit( { attributes, setAttributes } ) {
                             <ToolbarGroup>
                                 <ToolbarButton
                                     onClick={ () => setAttributes( { url:'', alt:'', id:''} ) }
-                                >
-                                    Delete
-                                </ToolbarButton>
+                                    icon={'trash'}
+                                />
+                                <MediaUploadCheck>
+                                    <MediaUpload
+                                        onSelect={ (media) => setAttributes({
+                                            id:media.id,
+                                            url:media.url,
+                                            alt:media.alt
+                                        })}
+                                        allowedTypes={['image']}
+                                        value={id}
+                                        render={ ({open}) => {
+                                            <ToolbarButton
+                                                onClick={open}
+                                                icon={'edit'}
+                                            />
+                                        }}
+                                    />
+                                </MediaUploadCheck>
                             </ToolbarGroup>
                         )
                     }

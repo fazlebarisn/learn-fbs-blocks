@@ -12,11 +12,14 @@
     "html": false
   },
   "attributes": {
-    "message": {
-      "type": "string",
-      "source": "text",
-      "selector": "div",
-      "default": ""
+    "url": {
+      "type": "string"
+    },
+    "alt": {
+      "type": "string"
+    },
+    "id": {
+      "type": "number"
     }
   },
   "textdomain": "fbs-block",

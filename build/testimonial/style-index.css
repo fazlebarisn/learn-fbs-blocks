@@ -16,6 +16,10 @@
   margin: 16px 0;
 }
 
+.testimonial-image {
+  width: 90px;
+}
+
 /* Clear floats after containers */
 .container::after {
   content: "";

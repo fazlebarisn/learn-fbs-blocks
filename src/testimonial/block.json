@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "fbs-block/testimonial",
+	"name": "fbs-block/fbs-inner",
 	"version": "0.1.0",
-	"title": "Testimonial",
+	"title": "Fbs Inner",
 	"category": "fbs-blocks",
 	"icon": "smiley",
 	"description": "only for testing",

@@ -23,6 +23,7 @@ export default function Edit( { attributes, setAttributes } ) {
                                 <MediaUploadCheck>
                                     <MediaUpload
                                         multiple={true}
+                                        gallery={true}
                                         onSelect={ (media) => setAttributes( { gallery:media } ) }
                                         allowedTypes={['image']}
                                         value={ gallery.map( (image) => image.id ) }

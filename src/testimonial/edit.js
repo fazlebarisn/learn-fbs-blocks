@@ -8,27 +8,24 @@ import './editor.scss';
 
 
 export default function Edit( { attributes, setAttributes } ) {
-    const { url, alt, id } = attributes;
+    const { gallery } = attributes;
     return (
         <div { ...useBlockProps() }>
-            <div class="container">
+            <div class="container-old">
                 <BlockControls>
                     {
-                        url && (
+                        gallery && (
                             <ToolbarGroup>
                                 <ToolbarButton
-                                    onClick={ () => setAttributes( { url:'', alt:'', id:''} ) }
+                                    onClick={ () => setAttributes( { gallery:''} ) }
                                     icon={'trash'}
                                 />
                                 <MediaUploadCheck>
                                     <MediaUpload
-                                        onSelect={ (media) => setAttributes({
-                                            id:media.id,
-                                            url:media.url,
-                                            alt:media.alt
-                                        })}
+                                        multiple={true}
+                                        onSelect={ (media) => setAttributes( {gallery:media} ) }
                                         allowedTypes={['image']}
-                                        value={id}
+                                        value={ gallery.map( (image) => image.id ) }
                                         render={ ({open}) => {
                                             <ToolbarButton
                                                 onClick={open}
@@ -42,23 +39,29 @@ export default function Edit( { attributes, setAttributes } ) {
                     }
                 </BlockControls>
                 {
-                    url ? (
-                        <img src={url} alt={alt} className='testimonial-image' />
+                    gallery ? (
+                        <div className='gallery-container'>
+                            {
+                                gallery.map( (image, index) => {
+                                    return(
+                                        <div className='single-gallery-image' key={index}>
+                                            <img src={image.url} alt={image.alt} />
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
                     ) : (
                         <MediaPlaceholder
                         onSelect={ (media) => setAttributes({
-                            id: media.id,
-                            url: media.url,
-                            alt: media.ult || 'Image here'
+                            gallery:media
                         })}
                         allowedTypes={ ['image'] }
-                        multiple = {false}
-                        labels={ { title: 'Add Image'} }
+                        multiple = {true}
+                        labels={ { title: 'Add Images'} }
                     />
                     )
                 }
-                <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-                <p>John Doe saved us from a web disaster.</p>
             </div>
         </div>
     );

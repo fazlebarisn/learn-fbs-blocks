@@ -12,14 +12,8 @@
 		"html": false
 	},
 	"attributes": {
-		"url": {
-			"type": "string"
-		},
-		"alt": {
-			"type": "string"
-		},
-		"id": {
-			"type": "number"
+		"gallery": {
+			"type": "array"
 		}
 	},
 	"textdomain": "fbs-block",

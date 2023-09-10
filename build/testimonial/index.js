@@ -51,12 +51,10 @@ function Edit({
     value: gallery.map(image => image.id),
     render: ({
       open
-    }) => {
-      (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarButton, {
-        onClick: open,
-        icon: 'edit'
-      });
-    }
+    }) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarButton, {
+      onClick: open,
+      icon: 'edit'
+    })
   })))), gallery ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "gallery-container"
   }, gallery.map((image, index) => {
@@ -155,17 +153,21 @@ function save({
   attributes
 }) {
   const {
-    url,
-    alt,
-    id
+    gallery
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "container"
-  }, url && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: url,
-    alt: alt,
-    className: "testimonial-image"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Chris Fox."), " CEO at Mighty Schools."), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "John Doe saved us from a web disaster."));
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "gallery-container"
+  }, gallery.map((image, index) => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "single-gallery-image",
+      key: index
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: image.url,
+      alt: image.alt
+    }));
+  })));
 }
 
 /***/ }),

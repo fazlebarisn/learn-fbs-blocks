@@ -23,15 +23,15 @@ export default function Edit( { attributes, setAttributes } ) {
                                 <MediaUploadCheck>
                                     <MediaUpload
                                         multiple={true}
-                                        onSelect={ (media) => setAttributes( {gallery:media} ) }
+                                        onSelect={ (media) => setAttributes( { gallery:media } ) }
                                         allowedTypes={['image']}
                                         value={ gallery.map( (image) => image.id ) }
-                                        render={ ({open}) => {
+                                        render={ ({open}) => (
                                             <ToolbarButton
                                                 onClick={open}
                                                 icon={'edit'}
                                             />
-                                        }}
+                                        )}
                                     />
                                 </MediaUploadCheck>
                             </ToolbarGroup>
@@ -53,9 +53,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         </div>
                     ) : (
                         <MediaPlaceholder
-                        onSelect={ (media) => setAttributes({
-                            gallery:media
-                        })}
+                        onSelect={ (media) => setAttributes( { gallery:media } ) }
                         allowedTypes={ ['image'] }
                         multiple = {true}
                         labels={ { title: 'Add Images'} }

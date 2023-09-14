@@ -28,7 +28,7 @@ class Assets {
 	 * @author Fazle Bari
 	 */
     public function block_editor_js(){
-        wp_register_script( 'fbs-block', FBS_BLOCK_ASSETS . '/fbs-block.js', [], false, true );
+        wp_register_script( 'fbs-block', FBS_BLOCK_ASSETS . '/fbs-block.js', ['jquery'], false, true );
         wp_enqueue_script('fbs-block');
     }
 

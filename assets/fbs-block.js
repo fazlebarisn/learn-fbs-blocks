@@ -1,11 +1,19 @@
-const checkbox = document.getElementById("checkbox");
-const professional = document.getElementById("professional");
-const master = document.getElementById("master");
-const basic = document.getElementById("basic");
+(function ($) {
+	$(document).ready(function () {
 
-checkbox.addEventListener("click", () => {
-  basic.textContent = basic.textContent === "$199.99" ? "$19.99" : "$199.99";
-  professional.textContent =
-    professional.textContent === "$249.99" ? "$24.99 " : "$249.99";
-  master.textContent = master.textContent === "$399.99" ? "$39.99" : "$399.99";
-});
+		$("body").on("click", ".fbs-pricing-table .checkbox", function (e) {
+      
+      if( this.checked ){
+        $('#basic').text('$199.99');
+        $('#professional').text('$249.99');
+        $('#master').text('$399.99');
+      }else{
+        $('#basic').text('$19.99');
+        $('#professional').text('$24.99');
+        $('#master').text('$39.99'); 
+      }
+
+		});
+
+	});
+})(jQuery);

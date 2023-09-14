@@ -1,27 +1,49 @@
 
 import { __ } from '@wordpress/i18n';
 
-import { useBlockProps } from '@wordpress/block-editor';
-import { Placeholder, TextControl } from '@wordpress/components';
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { Panel, PanelBody, TextControl } from '@wordpress/components';
 
 import './editor.scss';
 
 
 export default function Edit( { attributes, isSelected, setAttributes } ) {
+    const { title, annually, monthly} = attributes;
     return (
         <div { ...useBlockProps() }>
+            <InspectorControls key="setting">
+                <Panel>
+                    <PanelBody title='Header' initialOpen={false}>
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Change Pricing text', 'fbs-block') }
+                            value={title}
+                            onChange={ (val) => setAttributes( {title: val} ) }
+                        />
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Change Annually text', 'fbs-block') }
+                            value={annually}
+                            onChange={ (val) => setAttributes( {annually: val} ) }
+                        />
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Change Monthly text', 'fbs-block') }
+                            value={monthly}
+                            onChange={ (val) => setAttributes( {monthly: val} ) }
+                        />
+                    </PanelBody>
+                </Panel>
+            </InspectorControls>
             <div className='fbs-pricing-table'>
                 <header>
-                    <h1>Our Pricing</h1>
+                    <h1>{title}</h1>
                     <div className="toggle">
-                    <label>Annually </label>
+                    <label>{annually}</label>
                     <div className="toggle-btn">
                         <input type="checkbox" className="checkbox" id="checkbox" />
                         <label className="sub" id="sub" for="checkbox">
                         <div className="circle"></div>
                         </label>
                     </div>
-                    <label> Monthly</label>
+                    <label>{monthly}</label>
                     </div>
                 </header>
                 <div className="cards">

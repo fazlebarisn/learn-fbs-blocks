@@ -12,11 +12,17 @@
 		"html": false
 	},
 	"attributes": {
-		"message": {
+		"title": {
 			"type": "string",
-			"source": "text",
-			"selector": "div",
-			"default": ""
+			"default": "Our Pricing"
+		},
+		"annually": {
+			"type": "string",
+			"default": "Annually"
+		},
+		"monthly": {
+			"type": "string",
+			"default": "Monthly"
 		}
 	},
 	"textdomain": "fbs-block",

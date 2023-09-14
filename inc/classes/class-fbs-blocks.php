@@ -15,7 +15,7 @@ class FBS_BLOCKS {
 
 	protected function __construct() {
 		// load class.
-		// Assets::get_instance();
+		Assets::get_instance();
 
 		$this->setup_hooks();
 	}
@@ -34,7 +34,8 @@ class FBS_BLOCKS {
 	public function register_block(){
 		$block_names = [
 			'testimonial',
-			'subscribe'
+			'subscribe',
+			'pricing-table',
 		];
 		
 		return $block_names;

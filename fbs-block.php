@@ -38,6 +38,11 @@ if ( ! defined( 'FBS_BLOCKS_DIR_PATH' ) ) {
 	define( 'FBS_BLOCKS_DIR_PATH', __DIR__ );
 }
 
+define( 'FBS_BLOCK_FILE' , __FILE__ );
+define( 'FBS_BLOCK_URL' , plugins_url( '' , FBS_BLOCK_FILE ) );
+define( 'FBS_BLOCK_ASSETS' , FBS_BLOCK_URL . '/assets' );
+
+
 require_once FBS_BLOCKS_DIR_PATH . '/inc/helpers/autoloader.php';
 
 function fbs_blocks_plugin_instance() {

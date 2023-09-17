@@ -16,13 +16,29 @@
       "type": "string",
       "default": "Our Pricing"
     },
-    "basicTitle": {
+    "starterTitle": {
       "type": "string",
-      "default": "Basic"
+      "default": "Starter"
     },
-    "basicPrice": {
+    "starterPrice": {
       "type": "number",
-      "default": "199.33"
+      "default": "19.99"
+    },
+    "premiumTitle": {
+      "type": "string",
+      "default": "Premium"
+    },
+    "premiumPrice": {
+      "type": "number",
+      "default": "49.99"
+    },
+    "businessTitle": {
+      "type": "string",
+      "default": "Business"
+    },
+    "businessPrice": {
+      "type": "number",
+      "default": "99.99"
     }
   },
   "textdomain": "fbs-block",

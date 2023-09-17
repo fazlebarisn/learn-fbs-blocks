@@ -1,14 +1,14 @@
 
 import { __ } from '@wordpress/i18n';
 
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { useBlockProps, InspectorControls, RichText  } from '@wordpress/block-editor';
 import { Panel, PanelBody, TextControl,  __experimentalNumberControl as NumberControl } from '@wordpress/components';
 
 import './editor.scss';
 
 
 export default function Edit( { attributes, setAttributes } ) {
-    const { title, basicTitle, basicPrice} = attributes;
+    const { title, starterTitle, starterPrice, premiumTitle, premiumPrice, businessTitle, businessPrice} = attributes;
     return (
         <div { ...useBlockProps() }>
             <InspectorControls key="setting">
@@ -20,18 +20,49 @@ export default function Edit( { attributes, setAttributes } ) {
                             onChange={ (title) => setAttributes( {title: title} ) }
                         />
                     </PanelBody>
-                    <PanelBody title='Basic' initialOpen={false}>
+
+                    <PanelBody title='Starter' initialOpen={false}>
                         <TextControl className="blocks-base-control__input"
                             label={ __('Title text', 'fbs-block') }
-                            value={basicTitle}
-                            onChange={ (title) => setAttributes( {basicTitle: title} ) }
+                            value={starterTitle}
+                            onChange={ (title) => setAttributes( {starterTitle: title} ) }
                         />
                         <NumberControl className="blocks-base-control__input"
                             label={ __('Price', 'fbs-block') }
                             isShiftStepEnabled={ true }
                             shiftStep={ 10 }
-                            value={basicPrice}
-                            onChange={ (price) => setAttributes( {basicPrice: price} ) }
+                            value={starterPrice}
+                            onChange={ (price) => setAttributes( {starterPrice: price} ) }
+                        />
+                    </PanelBody>
+
+                    <PanelBody title='Premium' initialOpen={false}>
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Title text', 'fbs-block') }
+                            value={premiumTitle}
+                            onChange={ (title) => setAttributes( {premiumTitle: title} ) }
+                        />
+                        <NumberControl className="blocks-base-control__input"
+                            label={ __('Price', 'fbs-block') }
+                            isShiftStepEnabled={ true }
+                            shiftStep={ 10 }
+                            value={premiumPrice}
+                            onChange={ (price) => setAttributes( {premiumPrice: price} ) }
+                        />
+                    </PanelBody>
+
+                    <PanelBody title='Business' initialOpen={false}>
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Title text', 'fbs-block') }
+                            value={businessTitle}
+                            onChange={ (title) => setAttributes( {businessTitle: title} ) }
+                        />
+                        <NumberControl className="blocks-base-control__input"
+                            label={ __('Price', 'fbs-block') }
+                            isShiftStepEnabled={ true }
+                            shiftStep={ 10 }
+                            value={businessPrice}
+                            onChange={ (price) => setAttributes( {businessPrice: price} ) }
                         />
                     </PanelBody>
                 </Panel>
@@ -42,33 +73,43 @@ export default function Edit( { attributes, setAttributes } ) {
                 </header>
                 <div className="cards">
                     <div className="card shadow">
-                    <ul>
-                        <h3 className="pack">{basicTitle}</h3>
-                        <h2 id="basic" className="price bottom-bar">${basicPrice}</h2>
-                        <li className="bottom-bar">500 GB Storage</li>
-                        <li className="bottom-bar">2 Users Allowed</li>
-                        <li className="bottom-bar">Send up to 3 GB</li>
-                        <li><button className="btn">Learn More</button></li>
-                    </ul>
+                        <h3 className="pack">{starterTitle}</h3>
+                        <h2 id="starter" className="price bottom-bar">${starterPrice}</h2>
+                        <RichText
+                            tagName='ul'
+                            multiline='li'
+                            value={ attributes.basicContent }
+                            onChange={ ( basicContent ) => setAttributes( { basicContent } ) }
+                            placeholder={ __('Add list', 'fbs-block') }
+                        />
+                        <button className="btn">Learn More</button>
                     </div>
                     <div className="card active">
                     <ul>
-                        <h3 className="pack">Professional</h3>
-                        <h2 id="professional" className="price bottom-bar">$249.99</h2>
-                        <li className="bottom-bar">1 TB Storage</li>
-                        <li className="bottom-bar">5 Users Allowed</li>
-                        <li className="bottom-bar">Send up to 10 GB</li>
-                        <li><button className="btn active-btn">Learn More</button></li>
+                        <h3 className="pack">{premiumTitle}</h3>
+                        <h2 id="premium" className="price bottom-bar">${premiumPrice}</h2>
+                        <RichText
+                            tagName='ul'
+                            multiline='li'
+                            value={ attributes.premiumContent }
+                            onChange={ ( premiumContent ) => setAttributes( { premiumContent } ) }
+                            placeholder={ __('Add list', 'fbs-block') }
+                        />
+                        <button className="btn active-btn">Learn More</button>
                     </ul>
                     </div>
                     <div className="card shadow">
                     <ul>
-                        <h3 className="pack">Master</h3>
-                        <h2 id="master" className="price bottom-bar">$399.99</h2>
-                        <li className="bottom-bar">2 TB Storage</li>
-                        <li className="bottom-bar">10 Users Allowed</li>
-                        <li className="bottom-bar">Send up to 20 GB</li>
-                        <li><button className="btn">Learn More</button></li>
+                        <h3 className="pack">{businessTitle}</h3>
+                        <h2 id="business" className="price bottom-bar">${businessPrice}</h2>
+                        <RichText
+                            tagName='ul'
+                            multiline='li'
+                            value={ attributes.businessContent }
+                            onChange={ ( businessContent ) => setAttributes( { businessContent } ) }
+                            placeholder={ __('Add list', 'fbs-block') }
+                        />
+                        <button className="btn">Learn More</button>
                     </ul>
                     </div>
                 </div>

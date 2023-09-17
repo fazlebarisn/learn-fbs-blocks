@@ -27,6 +27,14 @@
 		"starterContent": {
 			"type": "string"
 		},
+		"starterBtnText": {
+			"type": "string",
+			"default": "Purchase"
+		},
+		"starterBtnUrl": {
+			"type": "string",
+			"default": "#"
+		},
 		"premiumTitle": {
 			"type": "string",
 			"default": "Premium"
@@ -38,6 +46,14 @@
 		"premiumContent": {
 			"type": "string"
 		},
+		"premiumBtnText": {
+			"type": "string",
+			"default": "Purchase"
+		},
+		"premiumBtnUrl": {
+			"type": "string",
+			"default": "#"
+		},
 		"businessTitle": {
 			"type": "string",
 			"default": "Business"
@@ -48,6 +64,14 @@
 		},
 		"businessContent": {
 			"type": "string"
+		},
+		"businessBtnText": {
+			"type": "string",
+			"default": "Purchase"
+		},
+		"businessBtnUrl": {
+			"type": "string",
+			"default": "#"
 		}
 	},
 	"textdomain": "fbs-block",

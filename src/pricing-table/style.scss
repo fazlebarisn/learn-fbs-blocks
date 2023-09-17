@@ -50,32 +50,33 @@ html {
 	border-radius: 1.6rem;
 	padding: 0.3rem;
 }
-.fbs-pricing-table.fbs-pricing-table.fbs-pricing-table .circle {
+.fbs-pricing-table .circle {
 	background-color: #fff;
 	height: 1.4rem;
 	width: 1.4rem;
 	border-radius: 50%;
 }
-.fbs-pricing-table.fbs-pricing-table.fbs-pricing-table
+.fbs-pricing-table.fbs-pricing-table
 	.checkbox:checked
 	+ .sub {
 	justify-content: flex-end;
 }
 
-.fbs-pricing-table.fbs-pricing-table.fbs-pricing-table .cards {
+.fbs-pricing-table .fbs-cards {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 }
 
-.fbs-pricing-table.fbs-pricing-table.fbs-pricing-table .card {
-	background: #fff;
-	color: hsl(233, 13%, 49%);
-	border-radius: 0.8rem;
+.fbs-pricing-table .fbs-card {
+    background: #fff;
+    color: hsl(233, 13%, 49%);
+    border-radius: 0.8rem;
+    padding: 40px 45px;
 }
 
-.fbs-pricing-table.fbs-pricing-table .cards .card.active {
+.fbs-pricing-table .fbs-cards .fbs-card.active {
 	background: linear-gradient(
 		135deg,
 		rgba(163, 168, 240, 1) 0%,
@@ -87,14 +88,14 @@ html {
 	transform: scale(1.1);
 	z-index: 1;
 }
-.fbs-pricing-table.fbs-pricing-table ul {
+.fbs-pricing-table ul {
 	margin: 2.6rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
 }
-.fbs-pricing-table.fbs-pricing-table ul li {
+.fbs-pricing-table ul li {
 	list-style-type: none;
 	display: flex;
 	justify-content: center;
@@ -102,20 +103,22 @@ html {
 	padding: 1rem 0;
 	border-bottom: 2px solid hsla(240, 8%, 85%, 0.582);
 }
-.fbs-pricing-table.fbs-pricing-table h2.price {
-	font-size: 3rem;
-	color: hsl(232, 13%, 33%);
-	padding-bottom: 2rem;
+.fbs-pricing-table h2.price {
+    font-size: 3rem;
+    color: hsl(232, 13%, 33%);
+    padding-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
 }
 .fbs-pricing-table .shadow {
 	box-shadow: -5px 5px 15px 1px rgba(0, 0, 0, 0.1);
 }
 
-.fbs-pricing-table .card.active .price {
+.fbs-pricing-table .fbs-card.active .price {
 	color: #fff;
 }
 
-.fbs-pricing-table .btn {
+.fbs-pricing-table a .btn {
 	margin-top: 1rem;
 	height: 2.6rem;
 	width: 13.3rem;
@@ -132,19 +135,31 @@ html {
 	outline: none;
 	border: 0;
 	font-weight: bold;
+
 }
-.fbs-pricing-table .active-btn {
+.fbs-pricing-table .fbs-cards .fbs-card a {
+	text-decoration: none;
+}
+.fbs-pricing-table .fbs-card.active button.btn.active-btn {
 	background: #fff;
 	color: hsl(237, 63%, 64%);
 }
 .fbs-pricing-table .bottom-bar {
 	border-bottom: 2px solid hsla(240, 8%, 85%, 0.582);
 }
-.fbs-pricing-table .card.active .bottom-bar {
+.fbs-pricing-table .fbs-card.active .bottom-bar {
 	border-bottom: 2px solid hsla(240, 8%, 85%, 0.253);
 }
 .fbs-pricing-table .pack {
-	font-size: 1.1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+
+
+.fbs-card.active h3.pack {
+    color: #fff;
 }
 
 @media (max-width: 280px) {
@@ -161,17 +176,17 @@ html {
 		align-items: center;
 		height: 80px;
 	}
-	.fbs-pricing-table .cards {
+	.fbs-pricing-table .fbs-cards {
 		margin: 0;
 		display: flex;
 		flex-direction: column;
 	}
 
-	.fbs-pricing-table .card {
+	.fbs-pricing-table .fbs-card {
 		transform: scale(0.8);
 		margin-bottom: 1rem;
 	}
-	.fbs-pricing-table .cards .card.active {
+	.fbs-pricing-table .fbs-cards .fbs-card.active {
 		transform: scale(0.8);
 	}
 }
@@ -180,48 +195,48 @@ html {
 	.fbs-pricing-table ul {
 		margin: 20px;
 	}
-	.fbs-pricing-table .cards {
+	.fbs-pricing-table .fbs-cards {
 		display: flex;
 		flex-direction: column;
 	}
-	.fbs-pricing-table .card {
+	.fbs-pricing-table .fbs-card {
 		margin-bottom: 1rem;
 	}
-	.fbs-pricing-table .cards .card.active {
+	.fbs-pricing-table .fbs-cards .fbs-card.active {
 		transform: scale(1);
 	}
 }
 
 @media (min-width: 320px) and (max-width: 414px) {
-	.fbs-pricing-table .cards {
+	.fbs-pricing-table .fbs-cards {
 		display: flex;
 		flex-direction: column;
 	}
-	.fbs-pricing-table .card {
+	.fbs-pricing-table .fbs-card {
 		margin-bottom: 1rem;
 	}
-	.fbs-pricing-table .cards .card.active {
+	.fbs-pricing-table .fbs-cards .fbs-card.active {
 		transform: scale(1);
 	}
 }
 @media (min-width: 414px) and (max-width: 768px) {
-	.fbs-pricing-table .card {
+	.fbs-pricing-table .fbs-card {
 		margin-bottom: 1rem;
 		margin-right: 1rem;
 	}
-	.fbs-pricing-table .cards .card.active {
+	.fbs-pricing-table .fbs-cards .fbs-card.active {
 		transform: scale(1);
 	}
 }
 @media (min-width: 768px) and (max-width: 1046px) {
-	.fbs-pricing-table .cards {
+	.fbs-pricing-table .fbs-cards {
 		display: flex;
 	}
-	.fbs-pricing-table .card {
+	.fbs-pricing-table .fbs-card {
 		margin-bottom: 1rem;
 		margin-right: 1rem;
 	}
-	.fbs-pricing-table .cards .card.active {
+	.fbs-pricing-table .fbs-cards .fbs-card.active {
 		transform: scale(1);
 	}
 }

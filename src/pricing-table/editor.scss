@@ -8,6 +8,7 @@
     max-width: unset;
  }
 
-//  .editor-styles-wrapper .wp-block{
-//     max-width: unset;
-//  }
+ .fbs-pricing-table ul.block-editor-rich-text__editable.rich-text {
+   margin: inherit;
+   padding: 0;
+}

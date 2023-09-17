@@ -8,7 +8,10 @@ import './editor.scss';
 
 
 export default function Edit( { attributes, setAttributes } ) {
-    const { title, starterTitle, starterPrice, premiumTitle, starterContent, premiumPrice, businessTitle, businessPrice} = attributes;
+    const { 
+        title, starterTitle, starterPrice, premiumTitle, premiumPrice, businessTitle, businessPrice,
+        starterBtnText, starterBtnUrl, premiumBtnText, premiumBtnUrl, businessBtnText, businessBtnUrl
+    } = attributes;
     return (
         <div { ...useBlockProps() }>
             <InspectorControls key="setting">
@@ -34,6 +37,16 @@ export default function Edit( { attributes, setAttributes } ) {
                             value={starterPrice}
                             onChange={ (price) => setAttributes( {starterPrice: price} ) }
                         />
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Button text', 'fbs-block') }
+                            value={starterBtnText}
+                            onChange={ (btnText) => setAttributes( {starterBtnText: btnText} ) }
+                        />
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Button Url', 'fbs-block') }
+                            value={starterBtnUrl}
+                            onChange={ (btnUrl) => setAttributes( {starterBtnUrl: btnUrl} ) }
+                        />
                     </PanelBody>
 
                     <PanelBody title='Premium' initialOpen={false}>
@@ -48,6 +61,16 @@ export default function Edit( { attributes, setAttributes } ) {
                             shiftStep={ 10 }
                             value={premiumPrice}
                             onChange={ (price) => setAttributes( {premiumPrice: price} ) }
+                        />
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Button text', 'fbs-block') }
+                            value={premiumBtnText}
+                            onChange={ (btnText) => setAttributes( {premiumBtnText: btnText} ) }
+                        />
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Button Url', 'fbs-block') }
+                            value={premiumBtnUrl}
+                            onChange={ (btnUrl) => setAttributes( {premiumBtnUrl: btnUrl} ) }
                         />
                     </PanelBody>
 
@@ -64,6 +87,16 @@ export default function Edit( { attributes, setAttributes } ) {
                             value={businessPrice}
                             onChange={ (price) => setAttributes( {businessPrice: price} ) }
                         />
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Button text', 'fbs-block') }
+                            value={businessBtnText}
+                            onChange={ (btnText) => setAttributes( {businessBtnText: btnText} ) }
+                        />
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Button Url', 'fbs-block') }
+                            value={businessBtnUrl}
+                            onChange={ (btnUrl) => setAttributes( {businessBtnUrl: btnUrl} ) }
+                        />
                     </PanelBody>
                 </Panel>
             </InspectorControls>
@@ -71,8 +104,8 @@ export default function Edit( { attributes, setAttributes } ) {
                 <header>
                     <h1>{title}</h1>
                 </header>
-                <div className="cards">
-                    <div className="card shadow">
+                <div className="fbs-cards">
+                    <div className="fbs-card shadow">
                         <h3 className="pack">{starterTitle}</h3>
                         <h2 id="starter" className="price bottom-bar">${starterPrice}</h2>
                         <RichText
@@ -83,9 +116,9 @@ export default function Edit( { attributes, setAttributes } ) {
                             onChange={ (content) => setAttributes( {starterContent: content} ) }
                             placeholder={ __('Add list', 'fbs-block') }
                         />
-                        <button className="btn">Learn More</button>
+                        <a href={starterBtnUrl}><button className="btn active-btn">{starterBtnText}</button></a>
                     </div>
-                    <div className="card active">
+                    <div className="fbs-card active">
                         <h3 className="pack">{premiumTitle}</h3>
                         <h2 id="premium" className="price bottom-bar">${premiumPrice}</h2>
                         <RichText
@@ -95,9 +128,9 @@ export default function Edit( { attributes, setAttributes } ) {
                             onChange={ ( premiumContent ) => setAttributes( { premiumContent } ) }
                             placeholder={ __('Add list', 'fbs-block') }
                         />
-                        <button className="btn active-btn">Learn More</button>
+                        <a href={premiumBtnUrl}><button className="btn active-btn">{premiumBtnText}</button></a>
                     </div>
-                    <div className="card shadow">
+                    <div className="fbs-card shadow">
                         <h3 className="pack">{businessTitle}</h3>
                         <h2 id="business" className="price bottom-bar">${businessPrice}</h2>
                         <RichText
@@ -107,7 +140,7 @@ export default function Edit( { attributes, setAttributes } ) {
                             onChange={ ( businessContent ) => setAttributes( { businessContent } ) }
                             placeholder={ __('Add list', 'fbs-block') }
                         />
-                        <button className="btn">Learn More</button>
+                        <a href={businessBtnUrl}><button className="btn active-btn">{businessBtnText}</button></a>
                     </div>
                 </div>
             </div>

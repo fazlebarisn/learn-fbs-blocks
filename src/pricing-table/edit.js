@@ -1,7 +1,7 @@
 
 import { __ } from '@wordpress/i18n';
 
-import { useBlockProps, InspectorControls, RichText  } from '@wordpress/block-editor';
+import { useBlockProps, InspectorControls, RichText, PanelColorSettings  } from '@wordpress/block-editor';
 import { Panel, PanelBody, TextControl,  __experimentalNumberControl as NumberControl } from '@wordpress/components';
 
 import './editor.scss';
@@ -10,8 +10,17 @@ import './editor.scss';
 export default function Edit( { attributes, setAttributes } ) {
     const { 
         title, starterTitle, starterPrice, premiumTitle, premiumPrice, businessTitle, businessPrice,
-        starterBtnText, starterBtnUrl, premiumBtnText, premiumBtnUrl, businessBtnText, businessBtnUrl
+        starterBtnText, starterBtnUrl, premiumBtnText, premiumBtnUrl, businessBtnText, businessBtnUrl,
+        starterBg, premiumBg, businessBg
     } = attributes;
+
+    const colors = [
+        { name: 'red', color: '#f00' },
+        { name: 'white', color: '#fff' },
+        { name: 'blue', color: '#00f' },
+        { name: 'dark', color: '#333333' },
+    ];
+
     return (
         <div { ...useBlockProps() }>
             <InspectorControls key="setting">
@@ -99,13 +108,35 @@ export default function Edit( { attributes, setAttributes } ) {
                         />
                     </PanelBody>
                 </Panel>
+                <PanelColorSettings
+                    title = { __('Colors', 'fbs-block') }
+                    initialOpen={false}
+                    colors={colors}
+                    colorSettings={[
+                        {
+                            value:starterBg,
+                            onChange: (color) => setAttributes( {starterBg: color} ),
+                            label: __('Starter Card BG', 'fbs-block')
+                        },
+                        {
+                            value:premiumBg,
+                            onChange: (color) => setAttributes( {premiumBg: color} ),
+                            label: __('Premium Card BG', 'fbs-block')
+                        },
+                        {
+                            value:businessBg,
+                            onChange: (color) => setAttributes( {businessBg: color} ),
+                            label: __('Business Card Bg', 'fbs-block')
+                        },
+                    ]}
+                />
             </InspectorControls>
             <div className='fbs-pricing-table'>
                 <header>
                     <h1>{title}</h1>
                 </header>
                 <div className="fbs-cards">
-                    <div className="fbs-card shadow">
+                    <div className="fbs-card shadow" style={{background:starterBg}}>
                         <h3 className="pack">{starterTitle}</h3>
                         <h2 id="starter" className="price bottom-bar">${starterPrice}</h2>
                         <RichText
@@ -118,7 +149,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         />
                         <a href={starterBtnUrl}><button className="btn active-btn">{starterBtnText}</button></a>
                     </div>
-                    <div className="fbs-card active">
+                    <div className="fbs-card active" style={{background:premiumBg}}>
                         <h3 className="pack">{premiumTitle}</h3>
                         <h2 id="premium" className="price bottom-bar">${premiumPrice}</h2>
                         <RichText
@@ -130,7 +161,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         />
                         <a href={premiumBtnUrl}><button className="btn active-btn">{premiumBtnText}</button></a>
                     </div>
-                    <div className="fbs-card shadow">
+                    <div className="fbs-card shadow" style={{background:businessBg}}>
                         <h3 className="pack">{businessTitle}</h3>
                         <h2 id="business" className="price bottom-bar">${businessPrice}</h2>
                         <RichText

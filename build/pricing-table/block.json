@@ -35,6 +35,10 @@
       "type": "string",
       "default": "#"
     },
+    "starterBg": {
+      "type": "string",
+      "default": "#fff"
+    },
     "premiumTitle": {
       "type": "string",
       "default": "Premium"
@@ -54,6 +58,10 @@
       "type": "string",
       "default": "#"
     },
+    "premiumBg": {
+      "type": "string",
+      "default": "#9A9FED"
+    },
     "businessTitle": {
       "type": "string",
       "default": "Business"
@@ -72,6 +80,10 @@
     "businessBtnUrl": {
       "type": "string",
       "default": "#"
+    },
+    "businessBg": {
+      "type": "string",
+      "default": "#fff"
     }
   },
   "textdomain": "fbs-block",

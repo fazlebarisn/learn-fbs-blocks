@@ -43,8 +43,24 @@ function Edit({
     premiumBtnText,
     premiumBtnUrl,
     businessBtnText,
-    businessBtnUrl
+    businessBtnUrl,
+    starterBg,
+    premiumBg,
+    businessBg
   } = attributes;
+  const colors = [{
+    name: 'red',
+    color: '#f00'
+  }, {
+    name: 'white',
+    color: '#fff'
+  }, {
+    name: 'blue',
+    color: '#00f'
+  }, {
+    name: 'dark',
+    color: '#333333'
+  }];
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
@@ -158,12 +174,38 @@ function Edit({
     onChange: btnUrl => setAttributes({
       businessBtnUrl: btnUrl
     })
-  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Colors', 'fbs-block'),
+    initialOpen: false,
+    colors: colors,
+    colorSettings: [{
+      value: starterBg,
+      onChange: color => setAttributes({
+        starterBg: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Starter Card BG', 'fbs-block')
+    }, {
+      value: premiumBg,
+      onChange: color => setAttributes({
+        premiumBg: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Premium Card BG', 'fbs-block')
+    }, {
+      value: businessBg,
+      onChange: color => setAttributes({
+        businessBg: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Business Card Bg', 'fbs-block')
+    }]
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fbs-pricing-table"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, title)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fbs-cards"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "fbs-card shadow"
+    className: "fbs-card shadow",
+    style: {
+      background: starterBg
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "pack"
   }, starterTitle), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
@@ -184,7 +226,10 @@ function Edit({
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "btn active-btn"
   }, starterBtnText))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "fbs-card active"
+    className: "fbs-card active",
+    style: {
+      background: premiumBg
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "pack"
   }, premiumTitle), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
@@ -203,7 +248,10 @@ function Edit({
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "btn active-btn"
   }, premiumBtnText))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "fbs-card shadow"
+    className: "fbs-card shadow",
+    style: {
+      background: businessBg
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "pack"
   }, businessTitle), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
@@ -312,7 +360,10 @@ function save({
     premiumBtnText,
     premiumBtnUrl,
     businessBtnText,
-    businessBtnUrl
+    businessBtnUrl,
+    starterBg,
+    premiumBg,
+    businessBg
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
@@ -321,7 +372,10 @@ function save({
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, title)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fbs-cards"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "fbs-card shadow"
+    className: "fbs-card shadow",
+    style: {
+      background: starterBg
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "pack"
   }, starterTitle), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
@@ -335,7 +389,10 @@ function save({
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "btn"
   }, starterBtnText))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "fbs-card active"
+    className: "fbs-card active",
+    style: {
+      background: premiumBg
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "pack"
   }, premiumTitle), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
@@ -349,7 +406,10 @@ function save({
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "btn active-btn"
   }, premiumBtnText))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "fbs-card shadow"
+    className: "fbs-card shadow",
+    style: {
+      background: businessBg
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "pack"
   }, businessTitle), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
@@ -447,7 +507,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/pricing-table","version":"0.1.0","title":"Pricing Table","category":"fbs-blocks","icon":"smiley","description":"only for testing","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"Our Pricing"},"starterTitle":{"type":"string","default":"Starter"},"starterPrice":{"type":"number","default":"19.99"},"starterContent":{"type":"string"},"starterBtnText":{"type":"string","default":"Purchase"},"starterBtnUrl":{"type":"string","default":"#"},"premiumTitle":{"type":"string","default":"Premium"},"premiumPrice":{"type":"number","default":"49.99"},"premiumContent":{"type":"string"},"premiumBtnText":{"type":"string","default":"Purchase"},"premiumBtnUrl":{"type":"string","default":"#"},"businessTitle":{"type":"string","default":"Business"},"businessPrice":{"type":"number","default":"99.99"},"businessContent":{"type":"string"},"businessBtnText":{"type":"string","default":"Purchase"},"businessBtnUrl":{"type":"string","default":"#"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/pricing-table","version":"0.1.0","title":"Pricing Table","category":"fbs-blocks","icon":"smiley","description":"only for testing","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"Our Pricing"},"starterTitle":{"type":"string","default":"Starter"},"starterPrice":{"type":"number","default":"19.99"},"starterContent":{"type":"string"},"starterBtnText":{"type":"string","default":"Purchase"},"starterBtnUrl":{"type":"string","default":"#"},"starterBg":{"type":"string","default":"#fff"},"premiumTitle":{"type":"string","default":"Premium"},"premiumPrice":{"type":"number","default":"49.99"},"premiumContent":{"type":"string"},"premiumBtnText":{"type":"string","default":"Purchase"},"premiumBtnUrl":{"type":"string","default":"#"},"premiumBg":{"type":"string","default":"#9A9FED"},"businessTitle":{"type":"string","default":"Business"},"businessPrice":{"type":"number","default":"99.99"},"businessContent":{"type":"string"},"businessBtnText":{"type":"string","default":"Purchase"},"businessBtnUrl":{"type":"string","default":"#"},"businessBg":{"type":"string","default":"#fff"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

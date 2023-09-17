@@ -2,13 +2,13 @@
 import { __ } from '@wordpress/i18n';
 
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { Panel, PanelBody, TextControl } from '@wordpress/components';
+import { Panel, PanelBody, TextControl,  __experimentalNumberControl as NumberControl } from '@wordpress/components';
 
 import './editor.scss';
 
 
 export default function Edit( { attributes, setAttributes } ) {
-    const { title} = attributes;
+    const { title, basicTitle, basicPrice} = attributes;
     return (
         <div { ...useBlockProps() }>
             <InspectorControls key="setting">
@@ -17,7 +17,21 @@ export default function Edit( { attributes, setAttributes } ) {
                         <TextControl className="blocks-base-control__input"
                             label={ __('Change Pricing text', 'fbs-block') }
                             value={title}
-                            onChange={ (val) => setAttributes( {title: val} ) }
+                            onChange={ (title) => setAttributes( {title: title} ) }
+                        />
+                    </PanelBody>
+                    <PanelBody title='Basic' initialOpen={false}>
+                        <TextControl className="blocks-base-control__input"
+                            label={ __('Title text', 'fbs-block') }
+                            value={basicTitle}
+                            onChange={ (title) => setAttributes( {basicTitle: title} ) }
+                        />
+                        <NumberControl className="blocks-base-control__input"
+                            label={ __('Price', 'fbs-block') }
+                            isShiftStepEnabled={ true }
+                            shiftStep={ 10 }
+                            value={basicPrice}
+                            onChange={ (price) => setAttributes( {basicPrice: price} ) }
                         />
                     </PanelBody>
                 </Panel>
@@ -29,8 +43,8 @@ export default function Edit( { attributes, setAttributes } ) {
                 <div className="cards">
                     <div className="card shadow">
                     <ul>
-                        <h3 className="pack">Basic</h3>
-                        <h2 id="basic" className="price bottom-bar">$199.99</h2>
+                        <h3 className="pack">{basicTitle}</h3>
+                        <h2 id="basic" className="price bottom-bar">${basicPrice}</h2>
                         <li className="bottom-bar">500 GB Storage</li>
                         <li className="bottom-bar">2 Users Allowed</li>
                         <li className="bottom-bar">Send up to 3 GB</li>

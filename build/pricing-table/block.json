@@ -15,6 +15,14 @@
     "title": {
       "type": "string",
       "default": "Our Pricing"
+    },
+    "basicTitle": {
+      "type": "string",
+      "default": "Basic"
+    },
+    "basicPrice": {
+      "type": "number",
+      "default": "199.33"
     }
   },
   "textdomain": "fbs-block",

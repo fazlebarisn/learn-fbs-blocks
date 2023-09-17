@@ -15,14 +15,6 @@
     "title": {
       "type": "string",
       "default": "Our Pricing"
-    },
-    "annually": {
-      "type": "string",
-      "default": "Annually"
-    },
-    "monthly": {
-      "type": "string",
-      "default": "Monthly"
     }
   },
   "textdomain": "fbs-block",

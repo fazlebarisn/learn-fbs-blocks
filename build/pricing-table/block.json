@@ -39,6 +39,10 @@
       "type": "string",
       "default": "#fff"
     },
+    "starterColor": {
+      "type": "string",
+      "default": "#484B5D"
+    },
     "premiumTitle": {
       "type": "string",
       "default": "Premium"
@@ -62,6 +66,10 @@
       "type": "string",
       "default": "#9A9FED"
     },
+    "premiumColor": {
+      "type": "string",
+      "default": "#fff"
+    },
     "businessTitle": {
       "type": "string",
       "default": "Business"
@@ -84,6 +92,10 @@
     "businessBg": {
       "type": "string",
       "default": "#fff"
+    },
+    "businesscolor": {
+      "type": "string",
+      "default": "#484B5D"
     }
   },
   "textdomain": "fbs-block",

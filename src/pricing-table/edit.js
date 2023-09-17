@@ -11,7 +11,7 @@ export default function Edit( { attributes, setAttributes } ) {
     const { 
         title, starterTitle, starterPrice, premiumTitle, premiumPrice, businessTitle, businessPrice,
         starterBtnText, starterBtnUrl, premiumBtnText, premiumBtnUrl, businessBtnText, businessBtnUrl,
-        starterBg, premiumBg, businessBg
+        starterBg, premiumBg, businessBg, starterColor, premiumColor, businesscolor
     } = attributes;
 
     const colors = [
@@ -119,14 +119,29 @@ export default function Edit( { attributes, setAttributes } ) {
                             label: __('Starter Card BG', 'fbs-block')
                         },
                         {
+                            value:starterColor,
+                            onChange: (color) => setAttributes( {starterColor: color} ),
+                            label: __('Starter Card Color', 'fbs-block')
+                        },
+                        {
                             value:premiumBg,
                             onChange: (color) => setAttributes( {premiumBg: color} ),
                             label: __('Premium Card BG', 'fbs-block')
                         },
                         {
+                            value:premiumColor,
+                            onChange: (color) => setAttributes( {premiumColor: color} ),
+                            label: __('Premium Card Color', 'fbs-block')
+                        },
+                        {
                             value:businessBg,
                             onChange: (color) => setAttributes( {businessBg: color} ),
                             label: __('Business Card Bg', 'fbs-block')
+                        },
+                        {
+                            value:businesscolor,
+                            onChange: (color) => setAttributes( {businesscolor: color} ),
+                            label: __('Business Card Color', 'fbs-block')
                         },
                     ]}
                 />
@@ -136,9 +151,9 @@ export default function Edit( { attributes, setAttributes } ) {
                     <h1>{title}</h1>
                 </header>
                 <div className="fbs-cards">
-                    <div className="fbs-card shadow" style={{background:starterBg}}>
-                        <h3 className="pack">{starterTitle}</h3>
-                        <h2 id="starter" className="price bottom-bar">${starterPrice}</h2>
+                    <div className="fbs-card shadow" style={{background:starterBg,color:starterColor}}>
+                        <h3 className="pack" style={{color:starterColor}}>{starterTitle}</h3>
+                        <h2 id="starter" className="price bottom-bar" style={{color:starterColor}}>${starterPrice}</h2>
                         <RichText
                             tagName='ul'
                             multiline='li'
@@ -149,9 +164,9 @@ export default function Edit( { attributes, setAttributes } ) {
                         />
                         <a href={starterBtnUrl}><button className="btn active-btn">{starterBtnText}</button></a>
                     </div>
-                    <div className="fbs-card active" style={{background:premiumBg}}>
-                        <h3 className="pack">{premiumTitle}</h3>
-                        <h2 id="premium" className="price bottom-bar">${premiumPrice}</h2>
+                    <div className="fbs-card active" style={{background:premiumBg,color:premiumColor}}>
+                        <h3 className="pack" style={{color:premiumColor}}>{premiumTitle}</h3>
+                        <h2 id="premium" className="price bottom-bar" style={{color:premiumColor}}>${premiumPrice}</h2>
                         <RichText
                             tagName='ul'
                             multiline='li'
@@ -161,9 +176,9 @@ export default function Edit( { attributes, setAttributes } ) {
                         />
                         <a href={premiumBtnUrl}><button className="btn active-btn">{premiumBtnText}</button></a>
                     </div>
-                    <div className="fbs-card shadow" style={{background:businessBg}}>
-                        <h3 className="pack">{businessTitle}</h3>
-                        <h2 id="business" className="price bottom-bar">${businessPrice}</h2>
+                    <div className="fbs-card shadow" style={{background:businessBg,color:businesscolor}}>
+                        <h3 className="pack" style={{color:businesscolor}}>{businessTitle}</h3>
+                        <h2 id="business" className="price bottom-bar" style={{color:businesscolor}}>${businessPrice}</h2>
                         <RichText
                             tagName='ul'
                             multiline='li'

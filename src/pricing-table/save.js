@@ -6,7 +6,7 @@ export default function save( { attributes } ) {
     const { 
         title, starterTitle, starterPrice, premiumTitle, premiumPrice, businessTitle, businessPrice,
         starterBtnText, starterBtnUrl, premiumBtnText, premiumBtnUrl, businessBtnText, businessBtnUrl,
-        starterBg, premiumBg, businessBg
+        starterBg, premiumBg, businessBg, starterColor, premiumColor, businesscolor
     } = attributes;
 
     return(
@@ -16,21 +16,21 @@ export default function save( { attributes } ) {
                     <h1>{title}</h1>
                 </header>
                 <div className="fbs-cards">
-                    <div className="fbs-card shadow" style={{background:starterBg}}>
-                        <h3 className="pack">{starterTitle}</h3>
-                        <h2 id="starter" className="price bottom-bar">${starterPrice}</h2>
+                    <div className="fbs-card shadow" style={{background:starterBg,color:starterColor}}>
+                        <h3 className="pack" style={{color:starterColor}}>{starterTitle}</h3>
+                        <h2 id="starter" className="price bottom-bar" style={{color:starterColor}}>${starterPrice}</h2>
                         <RichText.Content tagName="ul" value={ attributes.starterContent } />
                         <a href={starterBtnUrl}><button className="btn">{starterBtnText}</button></a>
                     </div>
-                    <div className="fbs-card active" style={{background:premiumBg}}>
-                        <h3 className="pack">{premiumTitle}</h3>
-                        <h2 id="premium" className="price bottom-bar">${premiumPrice}</h2>
+                    <div className="fbs-card active" style={{background:premiumBg,color:premiumColor}}>
+                        <h3 className="pack" style={{color:premiumColor}}>{premiumTitle}</h3>
+                        <h2 id="premium" className="price bottom-bar" style={{color:premiumColor}}>${premiumPrice}</h2>
                         <RichText.Content tagName="ul" value={ attributes.premiumContent } />
                         <a href={premiumBtnUrl}><button className="btn active-btn">{premiumBtnText}</button></a>
                     </div>
-                    <div className="fbs-card shadow" style={{background:businessBg}}>
-                        <h3 className="pack">{businessTitle}</h3>
-                        <h2 id="business" className="price bottom-bar">${businessPrice}</h2>
+                    <div className="fbs-card shadow" style={{background:businessBg,color:businesscolor}}>
+                        <h3 className="pack" style={{color:businesscolor}}>{businessTitle}</h3>
+                        <h2 id="business" className="price bottom-bar" style={{color:businesscolor}}>${businessPrice}</h2>
                         <RichText.Content tagName="ul" value={ attributes.businessContent } />
                         <a href={businessBtnUrl}><button className="btn">{businessBtnText}</button></a>
                     </div>

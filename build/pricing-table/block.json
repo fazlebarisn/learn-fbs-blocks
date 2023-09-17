@@ -24,6 +24,9 @@
       "type": "number",
       "default": "19.99"
     },
+    "starterContent": {
+      "type": "string"
+    },
     "premiumTitle": {
       "type": "string",
       "default": "Premium"
@@ -32,6 +35,9 @@
       "type": "number",
       "default": "49.99"
     },
+    "premiumContent": {
+      "type": "string"
+    },
     "businessTitle": {
       "type": "string",
       "default": "Business"
@@ -39,6 +45,9 @@
     "businessPrice": {
       "type": "number",
       "default": "99.99"
+    },
+    "businessContent": {
+      "type": "string"
     }
   },
   "textdomain": "fbs-block",

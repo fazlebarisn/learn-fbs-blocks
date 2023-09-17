@@ -35,6 +35,7 @@ function Edit({
     starterTitle,
     starterPrice,
     premiumTitle,
+    starterContent,
     premiumPrice,
     businessTitle,
     businessPrice
@@ -381,7 +382,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/pricing-table","version":"0.1.0","title":"Pricing Table","category":"fbs-blocks","icon":"smiley","description":"only for testing","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"Our Pricing"},"starterTitle":{"type":"string","default":"Starter"},"starterPrice":{"type":"number","default":"19.99"},"premiumTitle":{"type":"string","default":"Premium"},"premiumPrice":{"type":"number","default":"49.99"},"businessTitle":{"type":"string","default":"Business"},"businessPrice":{"type":"number","default":"99.99"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/pricing-table","version":"0.1.0","title":"Pricing Table","category":"fbs-blocks","icon":"smiley","description":"only for testing","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"Our Pricing"},"starterTitle":{"type":"string","default":"Starter"},"starterPrice":{"type":"number","default":"19.99"},"starterContent":{"type":"string"},"premiumTitle":{"type":"string","default":"Premium"},"premiumPrice":{"type":"number","default":"49.99"},"premiumContent":{"type":"string"},"businessTitle":{"type":"string","default":"Business"},"businessPrice":{"type":"number","default":"99.99"},"businessContent":{"type":"string"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

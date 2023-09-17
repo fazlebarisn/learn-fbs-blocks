@@ -8,7 +8,7 @@ import './editor.scss';
 
 
 export default function Edit( { attributes, setAttributes } ) {
-    const { title, starterTitle, starterPrice, premiumTitle, premiumPrice, businessTitle, businessPrice} = attributes;
+    const { title, starterTitle, starterPrice, premiumTitle, starterContent, premiumPrice, businessTitle, businessPrice} = attributes;
     return (
         <div { ...useBlockProps() }>
             <InspectorControls key="setting">

@@ -81,7 +81,6 @@ html {
 .fbs-pricing-table.fbs-pricing-table .cards .card.active {
   background: linear-gradient(135deg, rgb(163, 168, 240) 0%, rgb(105, 111, 221) 100%);
   color: #fff;
-  display: flex;
   align-items: center;
   transform: scale(1.1);
   z-index: 1;

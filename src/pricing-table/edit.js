@@ -78,14 +78,14 @@ export default function Edit( { attributes, setAttributes } ) {
                         <RichText
                             tagName='ul'
                             multiline='li'
-                            value={ attributes.basicContent }
-                            onChange={ ( basicContent ) => setAttributes( { basicContent } ) }
+                            value={ attributes.starterContent }
+                            // onChange={ ( starterContent ) => setAttributes( { starterContent } ) }
+                            onChange={ (content) => setAttributes( {starterContent: content} ) }
                             placeholder={ __('Add list', 'fbs-block') }
                         />
                         <button className="btn">Learn More</button>
                     </div>
                     <div className="card active">
-                    <ul>
                         <h3 className="pack">{premiumTitle}</h3>
                         <h2 id="premium" className="price bottom-bar">${premiumPrice}</h2>
                         <RichText
@@ -96,10 +96,8 @@ export default function Edit( { attributes, setAttributes } ) {
                             placeholder={ __('Add list', 'fbs-block') }
                         />
                         <button className="btn active-btn">Learn More</button>
-                    </ul>
                     </div>
                     <div className="card shadow">
-                    <ul>
                         <h3 className="pack">{businessTitle}</h3>
                         <h2 id="business" className="price bottom-bar">${businessPrice}</h2>
                         <RichText
@@ -110,7 +108,6 @@ export default function Edit( { attributes, setAttributes } ) {
                             placeholder={ __('Add list', 'fbs-block') }
                         />
                         <button className="btn">Learn More</button>
-                    </ul>
                     </div>
                 </div>
             </div>

@@ -43,6 +43,14 @@
       "type": "string",
       "default": "#484B5D"
     },
+    "starterBtnColor": {
+      "type": "string",
+      "default": "#fff"
+    },
+    "starterBtnBg": {
+      "type": "string",
+      "default": "#757BE1"
+    },
     "premiumTitle": {
       "type": "string",
       "default": "Premium"
@@ -67,6 +75,14 @@
       "default": "#9A9FED"
     },
     "premiumColor": {
+      "type": "string",
+      "default": "#fff"
+    },
+    "premiumTextColor": {
+      "type": "string",
+      "default": "#797FE3"
+    },
+    "premiumBgColor": {
       "type": "string",
       "default": "#fff"
     },
@@ -96,6 +112,14 @@
     "businesscolor": {
       "type": "string",
       "default": "#484B5D"
+    },
+    "businessBtnColor": {
+      "type": "string",
+      "default": "#fff"
+    },
+    "businessBtnBg": {
+      "type": "string",
+      "default": "#757BE1"
     }
   },
   "textdomain": "fbs-block",

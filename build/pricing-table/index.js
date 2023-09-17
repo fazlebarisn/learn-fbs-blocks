@@ -49,7 +49,13 @@ function Edit({
     businessBg,
     starterColor,
     premiumColor,
-    businesscolor
+    businesscolor,
+    starterBtnColor,
+    starterBtnBg,
+    businessBtnColor,
+    businessBtnBg,
+    premiumTextColor,
+    premiumBgColor
   } = attributes;
   const colors = [{
     name: 'red',
@@ -111,6 +117,35 @@ function Edit({
     onChange: btnUrl => setAttributes({
       starterBtnUrl: btnUrl
     })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Colors', 'fbs-block'),
+    initialOpen: false,
+    colors: colors,
+    colorSettings: [{
+      value: starterBg,
+      onChange: color => setAttributes({
+        starterBg: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Card Background', 'fbs-block')
+    }, {
+      value: starterColor,
+      onChange: color => setAttributes({
+        starterColor: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Card Text Color', 'fbs-block')
+    }, {
+      value: starterBtnColor,
+      onChange: color => setAttributes({
+        starterBtnColor: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(' Button Text Color', 'fbs-block')
+    }, {
+      value: starterBtnBg,
+      onChange: color => setAttributes({
+        starterBtnBg: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Background Color', 'fbs-block')
+    }]
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "Premium",
     initialOpen: false
@@ -144,6 +179,35 @@ function Edit({
     onChange: btnUrl => setAttributes({
       premiumBtnUrl: btnUrl
     })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Colors', 'fbs-block'),
+    initialOpen: false,
+    colors: colors,
+    colorSettings: [{
+      value: premiumBg,
+      onChange: color => setAttributes({
+        premiumBg: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Card Background', 'fbs-block')
+    }, {
+      value: premiumColor,
+      onChange: color => setAttributes({
+        premiumColor: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Text Color', 'fbs-block')
+    }, {
+      value: premiumTextColor,
+      onChange: color => setAttributes({
+        premiumTextColor: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Text Color', 'fbs-block')
+    }, {
+      value: premiumBgColor,
+      onChange: color => setAttributes({
+        premiumBgColor: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Background Color', 'fbs-block')
+    }]
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "Business",
     initialOpen: false
@@ -177,48 +241,36 @@ function Edit({
     onChange: btnUrl => setAttributes({
       businessBtnUrl: btnUrl
     })
-  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Colors', 'fbs-block'),
     initialOpen: false,
     colors: colors,
     colorSettings: [{
-      value: starterBg,
-      onChange: color => setAttributes({
-        starterBg: color
-      }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Starter Card BG', 'fbs-block')
-    }, {
-      value: starterColor,
-      onChange: color => setAttributes({
-        starterColor: color
-      }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Starter Card Color', 'fbs-block')
-    }, {
-      value: premiumBg,
-      onChange: color => setAttributes({
-        premiumBg: color
-      }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Premium Card BG', 'fbs-block')
-    }, {
-      value: premiumColor,
-      onChange: color => setAttributes({
-        premiumColor: color
-      }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Premium Card Color', 'fbs-block')
-    }, {
       value: businessBg,
       onChange: color => setAttributes({
         businessBg: color
       }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Business Card Bg', 'fbs-block')
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Card Background', 'fbs-block')
     }, {
       value: businesscolor,
       onChange: color => setAttributes({
         businesscolor: color
       }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Business Card Color', 'fbs-block')
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Card Text Color', 'fbs-block')
+    }, {
+      value: businessBtnColor,
+      onChange: color => setAttributes({
+        businessBtnColor: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Text Color', 'fbs-block')
+    }, {
+      value: businessBtnBg,
+      onChange: color => setAttributes({
+        businessBtnBg: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Background Color', 'fbs-block')
     }]
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fbs-pricing-table"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, title)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fbs-cards"
@@ -242,9 +294,7 @@ function Edit({
   }, "$", starterPrice), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "ul",
     multiline: "li",
-    value: attributes.starterContent
-    // onChange={ ( starterContent ) => setAttributes( { starterContent } ) }
-    ,
+    value: attributes.starterContent,
     onChange: content => setAttributes({
       starterContent: content
     }),
@@ -252,7 +302,11 @@ function Edit({
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: starterBtnUrl
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "btn active-btn"
+    className: "btn active-btn",
+    style: {
+      background: starterBtnBg,
+      color: starterBtnColor
+    }
   }, starterBtnText))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fbs-card active",
     style: {
@@ -281,7 +335,11 @@ function Edit({
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: premiumBtnUrl
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "btn active-btn"
+    className: "btn active-btn",
+    style: {
+      background: premiumBgColor,
+      color: premiumTextColor
+    }
   }, premiumBtnText))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fbs-card shadow",
     style: {
@@ -310,7 +368,11 @@ function Edit({
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: businessBtnUrl
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "btn active-btn"
+    className: "btn active-btn",
+    style: {
+      background: businessBtnBg,
+      color: businessBtnColor
+    }
   }, businessBtnText))))));
 }
 
@@ -408,7 +470,13 @@ function save({
     businessBg,
     starterColor,
     premiumColor,
-    businesscolor
+    businesscolor,
+    starterBtnColor,
+    starterBtnBg,
+    businessBtnColor,
+    businessBtnBg,
+    premiumTextColor,
+    premiumBgColor
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
@@ -439,7 +507,11 @@ function save({
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: starterBtnUrl
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "btn"
+    className: "btn active-btn",
+    style: {
+      background: starterBtnBg,
+      color: starterBtnColor
+    }
   }, starterBtnText))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fbs-card active",
     style: {
@@ -463,7 +535,11 @@ function save({
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: premiumBtnUrl
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "btn active-btn"
+    className: "btn active-btn",
+    style: {
+      background: premiumBgColor,
+      color: premiumTextColor
+    }
   }, premiumBtnText))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "fbs-card shadow",
     style: {
@@ -487,7 +563,11 @@ function save({
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: businessBtnUrl
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "btn"
+    className: "btn active-btn",
+    style: {
+      background: businessBtnBg,
+      color: businessBtnColor
+    }
   }, businessBtnText))))));
 }
 
@@ -573,7 +653,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/pricing-table","version":"0.1.0","title":"Pricing Table","category":"fbs-blocks","icon":"smiley","description":"only for testing","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"Our Pricing"},"starterTitle":{"type":"string","default":"Starter"},"starterPrice":{"type":"number","default":"19.99"},"starterContent":{"type":"string"},"starterBtnText":{"type":"string","default":"Purchase"},"starterBtnUrl":{"type":"string","default":"#"},"starterBg":{"type":"string","default":"#fff"},"starterColor":{"type":"string","default":"#484B5D"},"premiumTitle":{"type":"string","default":"Premium"},"premiumPrice":{"type":"number","default":"49.99"},"premiumContent":{"type":"string"},"premiumBtnText":{"type":"string","default":"Purchase"},"premiumBtnUrl":{"type":"string","default":"#"},"premiumBg":{"type":"string","default":"#9A9FED"},"premiumColor":{"type":"string","default":"#fff"},"businessTitle":{"type":"string","default":"Business"},"businessPrice":{"type":"number","default":"99.99"},"businessContent":{"type":"string"},"businessBtnText":{"type":"string","default":"Purchase"},"businessBtnUrl":{"type":"string","default":"#"},"businessBg":{"type":"string","default":"#fff"},"businesscolor":{"type":"string","default":"#484B5D"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/pricing-table","version":"0.1.0","title":"Pricing Table","category":"fbs-blocks","icon":"smiley","description":"only for testing","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","default":"Our Pricing"},"starterTitle":{"type":"string","default":"Starter"},"starterPrice":{"type":"number","default":"19.99"},"starterContent":{"type":"string"},"starterBtnText":{"type":"string","default":"Purchase"},"starterBtnUrl":{"type":"string","default":"#"},"starterBg":{"type":"string","default":"#fff"},"starterColor":{"type":"string","default":"#484B5D"},"starterBtnColor":{"type":"string","default":"#fff"},"starterBtnBg":{"type":"string","default":"#757BE1"},"premiumTitle":{"type":"string","default":"Premium"},"premiumPrice":{"type":"number","default":"49.99"},"premiumContent":{"type":"string"},"premiumBtnText":{"type":"string","default":"Purchase"},"premiumBtnUrl":{"type":"string","default":"#"},"premiumBg":{"type":"string","default":"#9A9FED"},"premiumColor":{"type":"string","default":"#fff"},"premiumTextColor":{"type":"string","default":"#797FE3"},"premiumBgColor":{"type":"string","default":"#fff"},"businessTitle":{"type":"string","default":"Business"},"businessPrice":{"type":"number","default":"99.99"},"businessContent":{"type":"string"},"businessBtnText":{"type":"string","default":"Purchase"},"businessBtnUrl":{"type":"string","default":"#"},"businessBg":{"type":"string","default":"#fff"},"businesscolor":{"type":"string","default":"#484B5D"},"businessBtnColor":{"type":"string","default":"#fff"},"businessBtnBg":{"type":"string","default":"#757BE1"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

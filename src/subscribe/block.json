@@ -12,27 +12,11 @@
 		"html": false
 	},
 	"attributes": {
-		"title": {
+		"content": {
 			"type": "string",
 			"source": "text",
 			"selector": "h2",
 			"default": "Let's keep in touch"
-		},
-		"description": {
-			"type": "string",
-			"source": "text",
-			"selector": "p",
-			"default": "Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"
-		},
-		"tag": {
-			"type": "string",
-			"source": "text",
-			"default": "h2"
-		},
-		"button": {
-			"type": "string",
-			"source": "text",
-			"default": "Send"
 		}
 	},
 	"textdomain": "fbs-block",

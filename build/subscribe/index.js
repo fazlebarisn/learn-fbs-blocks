@@ -30,89 +30,21 @@ function Edit({
   attributes,
   setAttributes
 }) {
-  const {
-    title,
-    description,
-    button,
-    tag
-  } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
-    key: "setting"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Panel, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Subscribe Title Settings",
-    initialOpen: false
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    className: "blocks-base-control__input",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('change title text', 'fbs-block'),
-    value: title,
-    onChange: val => setAttributes({
-      title: val
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Change tag', 'fbs-block'),
-    value: tag,
-    options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('H1', 'fbs-block'),
-      value: 'h1'
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('H2', 'fbs-block'),
-      value: 'h2'
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('H3', 'fbs-block'),
-      value: 'h3'
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('H4', 'fbs-block'),
-      value: 'h4'
-    }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('H5', 'fbs-block'),
-      value: 'h5'
-    }],
-    onChange: val => setAttributes({
-      tag: val
-    })
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Subscribe Description Settings",
-    initialOpen: false
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    className: "blocks-base-control__input",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('change description text', 'fbs-block'),
-    value: description,
-    onChange: val => setAttributes({
-      description: val
-    })
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Subscribe Button Settings",
-    initialOpen: false
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    className: "blocks-base-control__input",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('change button text', 'fbs-block'),
-    value: button,
-    onChange: val => setAttributes({
-      button: val
-    })
-  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "subscribe"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: tag,
-    value: title,
-    allowedFormats: ['core/bold', 'core/italic'],
-    className: "subscribe__title",
-    onChange: val => setAttributes({
-      title: val
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "subscribe__copy"
-  }, description), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "form"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    type: "email",
-    className: "form__email",
-    placeholder: "Enter Your Email Id"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "form__button"
-  }, button))));
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    ...blockProps,
+    tagName: "h2" // The tag here is the element output and editable in the admin
+    ,
+    value: attributes.content // Any existing content, either from the database or an attribute default
+    ,
+    allowedFormats: ['core/bold', 'core/italic'] // Allow the content to be made bold or italic, but do not allow other formatting options
+    ,
+    onChange: content => setAttributes({
+      content
+    }) // Store updated content as a block attribute
+    ,
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading...') // Display this text before any content has been added by the user
+  });
 }
 
 /** 
@@ -214,29 +146,12 @@ __webpack_require__.r(__webpack_exports__);
 function save({
   attributes
 }) {
-  const {
-    title,
-    description,
-    button,
-    tag
-  } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "subscribe"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "subscribe__title"
-  }, title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "subscribe__copy"
-  }, description), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "form"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    type: "email",
-    className: "form__email",
-    placeholder: "Enter Your Email Id"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "form__button"
-  }, button))));
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    ...blockProps,
+    tagName: "h2",
+    value: attributes.content
+  }); // Saves <h2>Content added in the editor...</h2> to the database for frontend display
 }
 
 /***/ }),
@@ -321,7 +236,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"email","description":"Add a subscribe form","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string","source":"text","selector":"h2","default":"Let\'s keep in touch"},"description":{"type":"string","source":"text","selector":"p","default":"Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!"},"tag":{"type":"string","source":"text","default":"h2"},"button":{"type":"string","source":"text","default":"Send"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fbs-block/subscribe","version":"0.1.0","title":"Subscribe","category":"fbs-blocks","icon":"email","description":"Add a subscribe form","example":{},"supports":{"html":false},"attributes":{"content":{"type":"string","source":"text","selector":"h2","default":"Let\'s keep in touch"}},"textdomain":"fbs-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

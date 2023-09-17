@@ -8,65 +8,16 @@ import './editor.scss';
 
 
 export default function Edit( { attributes, setAttributes } ) {
-    const { title, description, button, tag } = attributes;
+    const blockProps = useBlockProps();
     return (
-        <div { ...useBlockProps() }>
-            <InspectorControls key="setting">
-                <Panel>
-
-                    <PanelBody title='Subscribe Title Settings' initialOpen={false}>
-                        <TextControl className="blocks-base-control__input"
-                            label={ __('change title text', 'fbs-block') }
-                            value={title}
-                            onChange={ (val) => setAttributes( {title: val} ) }
-                        />
-                        <SelectControl
-                            label={__('Change tag', 'fbs-block')}
-                            value={tag}
-                            options={[
-                                { label: __('H1', 'fbs-block'), value: 'h1' },
-                                { label: __('H2', 'fbs-block'), value: 'h2' },
-                                { label: __('H3', 'fbs-block'), value: 'h3' },
-                                { label: __('H4', 'fbs-block'), value: 'h4' },
-                                { label: __('H5', 'fbs-block'), value: 'h5' }
-                            ]}
-                            onChange={ (val) => setAttributes( {tag: val} ) }
-                        />
-                    </PanelBody>
-
-                    <PanelBody title='Subscribe Description Settings' initialOpen={false}>
-                        <TextControl className="blocks-base-control__input"
-                            label={__('change description text', 'fbs-block')}
-                            value={description}
-                            onChange={ (val) => setAttributes( {description: val} ) }
-                        />
-                    </PanelBody>
-
-                    <PanelBody title='Subscribe Button Settings' initialOpen={false}>
-                        <TextControl className="blocks-base-control__input"
-                            label={__('change button text','fbs-block') }
-                            value={button}
-                            onChange={ (val) => setAttributes( {button: val} ) }
-                        />
-                    </PanelBody>
-
-                </Panel>
-            </InspectorControls>
-            <div className='subscribe'>
-                <RichText
-                    tagName={tag}
-                    value={title}
-                    allowedFormats={ [ 'core/bold', 'core/italic' ] }
-                    className='subscribe__title'
-                    onChange={ (val) => setAttributes( {title: val} ) }
-                />
-                <p className="subscribe__copy">{description}</p>
-                <div className="form">
-                    <input type="email" className="form__email" placeholder="Enter Your Email Id" />
-                    <button className="form__button">{button}</button>
-                </div>
-            </div>
-        </div>
+        <RichText
+            { ...blockProps }
+            tagName="h2" // The tag here is the element output and editable in the admin
+            value={ attributes.content } // Any existing content, either from the database or an attribute default
+            allowedFormats={ [ 'core/bold', 'core/italic' ] } // Allow the content to be made bold or italic, but do not allow other formatting options
+            onChange={ ( content ) => setAttributes( { content } ) } // Store updated content as a block attribute
+            placeholder={ __( 'Heading...' ) } // Display this text before any content has been added by the user
+        />
     );
 }
 
